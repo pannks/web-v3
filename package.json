@@ -1,0 +1,25 @@
+{
+  "name": "pann-website-v3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pann Kaansadich",
+  "license": "ISC",
+  "description": "new website for build portfolio y2023",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "firebase": "^9.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pannks/web-v3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pannks/web-v3/issues"
+  },
+  "homepage": "https://github.com/pannks/web-v3#readme"
+}
