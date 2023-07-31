@@ -12,19 +12,8 @@
     ],
     "rewrites": [
       {
-        "source": "^(.*?)/$",
+        "source": "**",
         "destination": "/$1.html"
-      },
-      {
-        "source": "^(.*?)/(.+)/$",
-        "destination": "/$1/$2.html"
-      }
-    ],
-    "redirects": [
-      {
-        "source": "^(.*)/$",
-        "destination": "/$1",
-        "type": 301
       }
     ]
   },
