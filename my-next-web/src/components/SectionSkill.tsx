@@ -1,10 +1,10 @@
 import React from "react";
 import SkillCard from "./SkillCard";
 import styles from "./SectionSkill.module.scss";
-import { skillData } from "@/app/data/skillData";
+import { Skill, skillData } from "@/app/data/skillData";
 
 const SectionSkill = () => {
-    const renderSkill = (skill) => (
+    const renderSkill = (skill: Skill) => (
         <SkillCard
             key={skill.name}
             name={skill.name}

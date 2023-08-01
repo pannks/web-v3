@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import {
     SiReact,
     SiTypescript,
@@ -21,6 +22,14 @@ import {
     SiAdobepremierepro,
     SiAdobeaftereffects,
 } from "react-icons/si";
+
+export type Skill = {
+    name: string;
+    desc: string;
+    color: string;
+    time: string;
+    icon: () => JSX.Element;
+};
 
 export const skillData = {
     frontend: [
