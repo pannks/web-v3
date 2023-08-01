@@ -1,0 +1,23 @@
+.card {
+    padding: 2rem 0.2rem;
+    border: 0.1rem solid var(--c-grey-100);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    & > h4 {
+        word-wrap: normal
+    }
+    &:hover {
+        & > .icon {
+            color: var(--color-hover);
+        }
+    }
+}
+
+.icon {
+    display: inline;
+    transition: all 200ms ease;
+    font-size: 2.4rem;
+    
+}

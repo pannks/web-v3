@@ -1,0 +1,20 @@
+.footer {
+    font-family: var(--f-2);
+    text-align: center;
+    padding: 5rem;
+    position: relative;
+    bottom: 0;
+    border-top: 0.1rem solid var(--c-grey-100);
+    margin-top: 2rem;
+} 
+
+.contacts {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    margin-bottom: 1.6rem;
+    & > a > svg {
+        color: var(--c-grey-700);
+    }
+
+}

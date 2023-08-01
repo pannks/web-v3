@@ -1,0 +1,112 @@
+.section {
+    &__1 {
+        padding: 10vh calc(10vw + 2rem) ;
+        background-color:  var(--c-white);
+        & > h1 {
+            font-size: 2.2rem;
+            width: 20rem;
+            font-weight: 300;
+            font-family: var(--f-1);
+            margin-bottom: 3.2rem;
+            & > span {
+                font-weight: 600;
+                background-image: 
+                linear-gradient(to left, #22c1c3,#fdbb2d); 
+                background-clip: text;
+                -webkit-text-fill-color: transparent;  
+            
+            }
+        }
+        & > p {
+            font-family: var(--f-2);
+            margin-bottom: 1.6rem;
+            font-style: italic;
+        }
+    }
+    &__2 {
+        background-color: var(--c-primary);
+        color: var(--c-white);
+        font-family: var(--f-1);
+        padding: 4rem 10vw ;
+        & > h2 {
+            font-size: 2rem;
+            margin: 0 0 0.3rem;
+        }
+        & > p {
+            margin: 0 0 2rem;
+            font-family: var(--f-2);
+        }
+
+    }
+    &__3 {
+        font-family: var(--f-1);
+        padding: 4rem 10vw ;
+        & > h2 {
+            font-size: 2rem;
+            margin: 0 0 0.3rem;
+        }
+        & > p {
+            margin: 0 0 2rem;
+            font-family: var(--f-2);
+        }
+
+    }
+    &__4 {
+        font-family: var(--f-1);
+        padding: 4rem 10vw ;
+        & > h2 {
+            font-size: 2rem;
+            margin: 0 0 0.3rem;
+        }
+        & > p {
+            margin: 0 0 2rem;
+            font-family: var(--f-2);
+        }
+
+    }
+
+}
+.card__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(20rem, 1fr));
+    gap: 0.6rem;
+}
+
+.quicknav {
+    rotate: 90deg;
+    transform-origin: 0 0;
+    transform: translate(6rem, -3rem);
+    position: fixed;
+    background-color: var(--c-white);
+    top: 0;
+    font-family: var(--f-2);
+    display: inline-flex;
+    flex-direction: row;
+    transition: all 200ms ease;
+    animation: fade-slide 670ms ease 0ms;
+    opacity: 0.8;
+    &:hover {
+        opacity: 1;
+    }
+    & > a {
+        padding: 1rem 2.8rem;
+        transition: all 300ms ease;
+        &:hover {
+            background-color: var(--c-primary);
+        }
+    }
+
+}
+
+@keyframes fade-slide {
+    0% {
+        opacity: 0;
+        transform: translate(6rem, 0);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translate(6rem, -3rem);
+}
+}
+
+

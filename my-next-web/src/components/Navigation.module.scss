@@ -1,6 +1,78 @@
 .nav {
     padding: 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     background-color: var(--c-white);
-    border-bottom: 0.1rem solid #f5f5f5;
+    border-bottom: 0.1rem solid var(--c-grey-100);
+    font-weight: 400;
+    font-family: var(--f-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+
+
+
+  .toggleTheme input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .toggleTheme *,
+  .toggleTheme ::after,
+  .toggleTheme ::before {
+    box-sizing: border-box;
+  }
+
+  /* The switch - the box around the slider */
+  .toggleTheme .switch {
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    display: inline-block;
+  }
+
+  /* The slider */
+  .toggleTheme .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+  }
+
+  .toggleTheme .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+   transition: .4s;
+  }
+
+  .toggleTheme input:checked + .slider {
+    background-color: #303136;
+  }
+
+  .toggleTheme input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  }
+
