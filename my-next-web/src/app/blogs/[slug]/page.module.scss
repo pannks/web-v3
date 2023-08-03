@@ -1,0 +1,81 @@
+.header {
+    padding: 2rem 3.2rem;
+    font-size: 1.2rem;
+    font-family: var(--f-2);
+    & > a {
+        color: var(--c-grey-500);
+        padding: 0.2rem 0;
+        &:hover {
+            background-color: var(--c-primary);
+            color: var(--c-white);
+        }    
+    }
+}
+
+.page {
+    padding: 2rem 3.2rem 3rem;
+    &__desc {
+        text-align: center;
+        font-size: 2.0rem;
+        font-family: var(--f-2);
+        font-weight: 400;
+        margin: 2rem auto 3rem;
+        max-width: 68rem;
+    }
+    &__title {
+        font-family: var(--f-1);
+        font-size: 2.8rem;
+        margin: 4rem auto;
+        text-align: center;
+        max-width: 68rem;
+    }
+    & > article {
+        max-width: 68rem;
+        margin: 2rem auto;
+        font-family: var(--f-3);
+        font-size: 1.4rem;
+        & h1 { margin: 3rem 0; font-size: 2.4rem;}
+        & h2 { margin: 3rem 0;}
+        & h3 { margin: 3rem 0;}
+        & h4 {}
+        & h5 {}
+        & h6 {}
+
+        & ul {
+            padding: 0 2rem;
+        }
+
+        // & pre {
+        //     padding: 1.2rem 2rem;
+        //     margin: 2rem;
+
+        // }   
+
+        & p {
+            margin: 1.2rem 0;
+            & > code {
+                color: var(--c-grey-700);
+            }
+            & > a {
+                color: var(--c-secondary);
+            }
+        }
+
+        & table {
+            border-collapse: collapse ;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        & td, th {
+            border: 1px solid var(--c-grey);
+            padding: 0.6rem 2rem;
+        }
+        & blockquote {
+            background-color: var(--c-grey-100);
+            padding: 0.2rem 2rem;
+            border-left: 0.4rem solid var(--c-grey);
+        }
+    
+    }
+}

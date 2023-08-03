@@ -7,10 +7,10 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.contacts}>
-                <Link href="./">
+                <Link href="https://github.com/pannks">
                     <SiGithub size={18} />
                 </Link>
-                <Link href="./">
+                <Link href="https://www.youtube.com/channel/UCFnF4VHD1qSyraDuE1LKIFQ">
                     <SiYoutube size={18} />
                 </Link>
                 <Link href="./">

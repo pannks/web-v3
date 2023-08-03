@@ -1,0 +1,68 @@
+---
+title: "What is Bun?"
+desc: "Revolutionizing Super Speed JavaScript Runtime"
+coverImage: "https://bun.sh/share.png"
+date: "2020-03-16T05:35:07.322Z"
+---
+
+<p style={{ textAlign: "end" }}>
+    <sub>Summary from bun.sh</sub>
+</p>
+
+<p align="center">
+    <a href="https://bun.sh">
+        <img
+            src="https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png"
+            alt="Logo"
+            height={130}
+        />
+    </a>
+</p>
+
+"Bun" is an all-in-one toolkit for JavaScript and TypeScript applications.
+It comes as a single executable called "bun." At its core, it includes the Bun runtime, a fast JavaScript runtime designed as a drop-in replacement for Node.js.
+The runtime is written in `Zig` and powered by JavaScriptCore, which significantly improves startup times and reduces memory usage.
+
+### Installation
+
+```sh
+# with install script (recommended)
+curl -fsSL https://bun.sh/install | bash
+
+# with npm
+npm install -g bun
+
+# with Homebrew
+brew tap oven-sh/bun
+brew install bun
+
+# with Docker
+docker pull oven/bun
+docker run --rm --init --ulimit memlock=-1:-1 oven/bun
+```
+
+### Run a script
+
+Bun can also execute "scripts" from your `package.json.` Add the following script:
+
+```json
+{
+    "name": "quickstart",
+    "module": "index.ts",
+    "type": "module",
+    "scripts": {
+        "start": "bun run index.ts"
+    },
+    "devDependencies": {
+        "bun-types": "^0.7.0"
+    }
+}
+```
+
+then run with
+
+```bash
+bun run start
+```
+
+**[Read the docs →](https://bun.sh/docs)**

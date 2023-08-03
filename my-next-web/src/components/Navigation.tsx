@@ -2,12 +2,13 @@
 import React from "react";
 import styles from "./Navigation.module.scss";
 import { useDarkMode } from "@/contexts/DarkModeContext";
+import Link from "next/link";
 
 const Navigation = () => {
     const { isDarkMode, toggleDarkMode } = useDarkMode();
     return (
         <div className={styles.nav}>
-            <p>PannKs</p>
+            <Link href={"/"}>PannKs</Link>
             <div className={styles.toggleTheme}>
                 <label className={styles.switch}>
                     <input

@@ -16,10 +16,28 @@ const DarkModeContext = createContext<DarkModeContextValue | undefined>(
 );
 
 const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const isLocalStorageAvailable =
+        typeof window !== "undefined" && typeof localStorage !== "undefined";
+
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        if (isLocalStorageAvailable) {
+            const storedValue = localStorage.getItem("isDarkMode");
+            return storedValue ? JSON.parse(storedValue) : false;
+        }
+        return false; // Fallback value if localStorage is not available
+    });
 
     const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
+        setIsDarkMode((prevIsDarkMode: boolean) => {
+            const newIsDarkMode = !prevIsDarkMode;
+            if (isLocalStorageAvailable) {
+                localStorage.setItem(
+                    "isDarkMode",
+                    JSON.stringify(newIsDarkMode)
+                );
+            }
+            return newIsDarkMode;
+        });
     };
 
     useEffect(() => {

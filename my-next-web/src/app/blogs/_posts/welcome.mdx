@@ -1,0 +1,90 @@
+---
+title: "Use MDX in Next.JS 13.4"
+desc: "How MDX Changed the Way We Write Blogs"
+coverImage: "https://nextjs.org/api/og?title=Configuring:%20MDX"
+date: "2020-03-16T05:35:07.322Z"
+---
+
+<p style={{ textAlign: "end" }}>
+    {" "}
+    <sub>by PannKs</sub>{" "}
+</p>
+
+<img width={"100%"} src="https://nextjs.org/api/og?title=Configuring:%20MDX" />
+
+**MDX**, short for _Markdown with Embedded JSX_, is a revolutionary markup language that has **transformed** the landscape of blog writing. By combining the simplicity of Markdown with the power of JSX, MDX has provided content creators with a seamless and dynamic approach to crafting engaging blog posts. Gone are the days of relying solely on static content; with MDX, authors can now effortlessly integrate interactive components, code snippets, and data visualizations directly into their articles. This introduction will delve into the key ways MDX has _revolutionized_ the blogging experience, making it more intuitive, interactive, and captivating than ever before. **Discover** how MDX has **ushered** in a new era of blog writing, allowing authors to _fully unleash their creativity_ and deliver compelling content to their readers.
+
+# This is h1
+
+## This is h2
+
+### This is h3
+
+#### This is h4
+
+นี่คือตัวอักษรปกติ ฟ้าครึ้มเมฆฝนกำลังจะมา แดดอ่อนล้า ลมพัดปลิวไหว หยดน้ำตาไม่อาจหายไปจากใจฉัน
+
+และนี่คือ _ตัวอักษรเอียง_ **หนา**
+
+```python
+print("This is code block!")
+
+for i in range(31):
+    for j in range(31):
+        if (16-j)**2+(16-i-abs(j-16))**2<=72:
+            print('* ',end='')
+        else:
+            print('  ',end='')
+    print()
+```
+
+in development, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [next/font](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Table
+
+| Tables   |      Are      |  Cool |
+| -------- | :-----------: | ----: |
+| col 1 is | left-aligned  | $1600 |
+| col 2 is |   centered    |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+## Tasklist
+
+-   [x] Add Changelog
+-   [x] Add back to top links
+-   [ ] Add Additional Templates w/ Examples
+-   [ ] Add "components" document to easily copy & paste sections of the readme
+-   [ ] Multi-language Support
+    -   [ ] Chinese
+    -   [ ] Spanish
+
+_This is italic paragraph something quite long but not longer enough._
+
+> This is quote  
+> by me  
+> yeah that cool
+
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+~~The world is flat.~~ We now know that the world is round.
+
+Gone camping! :tent: Be back soon.
+
+That is so funny! :joy:
+
+I need to highlight these ==very important words==.
+
+[^1]: This is the first footnote.
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    ```javascript
+    const test = { a: "b" };
+    ```
+
+    Add as many paragraphs as you like.

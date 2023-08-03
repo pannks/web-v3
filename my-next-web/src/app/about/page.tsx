@@ -1,17 +1,17 @@
+import { Metadata } from "next";
+import styles from "./page.module.scss";
+
+export const metadata: Metadata = {
+    title: "Pann's Website | About Me",
+    description: "PannKs Latest Official Website 2023",
+};
+
 const AboutPage = () => {
     return (
-        <>
-            <h1>AboutPage</h1>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, minima non, sunt nisi provident veritatis at nostrum
-                repellendus nobis in quibusdam saepe quia! Libero pariatur
-                architecto harum, itaque voluptates nam quam tempore facere
-                debitis, provident soluta ut facilis doloribus neque optio enim
-                ipsa corporis consequuntur ratione! Obcaecati similique aperiam
-                quisquam.
-            </p>
-        </>
+        <div className={styles.section__1}>
+            <h1 className={styles.heading}>About Me</h1>
+            <p>Just someone who is lonely in the huge world</p>
+        </div>
     );
 };
 

@@ -5,7 +5,7 @@
     position: relative;
     bottom: 0;
     border-top: 0.1rem solid var(--c-grey-100);
-    margin-top: 2rem;
+    margin-top: 1rem;
 } 
 
 .contacts {
@@ -15,6 +15,9 @@
     margin-bottom: 1.6rem;
     & > a > svg {
         color: var(--c-grey-700);
+        &:hover {
+            color: var(--c-primary);
+        }
     }
 
 }

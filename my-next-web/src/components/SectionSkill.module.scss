@@ -1,8 +1,13 @@
 .skill__row {
     display: grid;
     grid-template-columns: repeat(auto-fill ,minmax(8rem, 1fr));
+    font-family: var(--f-1);
+
 }
 
 .head {
+    font-family: var(--f-1);
+    font-size: 1.8rem;
     margin: 2rem 0;
+    color: var(--c-primary);
 }
