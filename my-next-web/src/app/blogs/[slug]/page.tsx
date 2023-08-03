@@ -71,42 +71,28 @@ export async function generateMetadata({
     };
 }
 
-// export async function getStaticProps({ params }: Params) {
-//     console.log(params);
-
-//     const post = getPostBySlug(params.slug, [
-//         "title",
-//         "date",
-//         "slug",
-//         "author",
-//         "content",
-//         "ogImage",
-//         "coverImage",
-//     ]);
-
-//     return {
-//         props: {
-//             post: {
-//                 ...post,
-//             },
-//         },
-//     };
-// }
-
-export async function getStaticPaths() {
+export async function generateStaticParams() {
     const posts = getAllPosts(["slug"]);
 
-    return {
-        paths: posts.map((post) => {
-            // console.log(post);
-            return {
-                params: {
-                    slug: post.slug,
-                },
-            };
-        }),
-        fallback: false,
-    };
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
 }
+
+// export async function getStaticPaths() {
+//     const posts = getAllPosts(["slug"]);
+
+//     return {
+//         paths: posts.map((post) => {
+//             // console.log(post);
+//             return {
+//                 params: {
+//                     slug: post.slug,
+//                 },
+//             };
+//         }),
+//         fallback: false,
+//     };
+// }
 
 export default BlogPage;
