@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./ProjectCard.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 import { Url } from "next/dist/shared/lib/router/router";
 
@@ -20,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <Link href={href} className={styles.link}>
             <div className={styles.card}>
-                <img src={img} alt={title} />
+                <img src={`${img}`} alt={title} />
                 <h4>{title}</h4>
                 <p>{desc}</p>
             </div>

@@ -17,6 +17,9 @@ const nextConfig = {
     output: "export",
     distDir: "build",
     trailingSlash: true,
+    images: {
+        loader: "custom",
+    },
 };
 
 module.exports = withMDX(nextConfig);

@@ -33,7 +33,10 @@
         }
     }
     &__2 {
-        background-color: var(--c-primary-light);
+        background: var(--c-primary-light);  
+        background: -webkit-linear-gradient(to right, var(--c-primary-light-2), var(--c-primary-light));  
+        background: linear-gradient(to right, var(--c-primary-light-2), var(--c-primary-light)); 
+
         color: var(--c-black);
         padding: 6rem 10vw ;
         & > h2 {

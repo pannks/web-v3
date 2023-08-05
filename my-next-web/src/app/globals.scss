@@ -1,16 +1,20 @@
 :root {
   &,&.light-mode {
     --c-white: #ffffff;
-    --c-black: #292b2c;
+    --c-black: #19191b;
     
     --c-grey-100: #f4f4f4;
     --c-grey-200: #ededed;
     --c-grey: #d0d0d0;
     --c-grey-700: #666666;
     
-    --c-primary: #ffaa00;
-    --c-primary-light: #ffe0aa;
-  
+    --c-primary: #00ccff;
+    --c-primary-2: #ff9900;
+    --c-primary-light: #f4f9fd;
+    --c-primary-light-2: #fbf1ff;
+    
+    --c-primary-sh: #46464638;
+
     --c-secondary: #50c8d8;
     --c-secondary-light: #eaf5f8;
 
@@ -30,7 +34,7 @@
     --code-hue-6-2: #c18401;
   }
   &.dark-mode {
-    --c-white: #1e2022;
+    --c-white: #19191b;
     --c-black: #f6f1f1;
     
     --c-grey-100: #303030;
@@ -38,11 +42,15 @@
     --c-grey: #848484;
     --c-grey-700: #c5c5c5;
     
-    --c-primary: #db7522;
-    --c-primary-light: #4a3d32;
+    --c-primary: #78efff;
+    --c-primary-2: #ff70bf;
+    --c-primary-light: #21262b;
+    --c-primary-light-2: #2c262e;
+
+    --c-primary-sh: #00000075;
     
     --c-secondary: #3da8c9;
-    --c-secondary-light: #303a3e;
+    --c-secondary-light: #251e21;
 
     --c-selection: #e09e2d;
 
