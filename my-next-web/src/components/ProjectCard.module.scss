@@ -15,11 +15,7 @@
     font-family: var(--f-1);
     
     & > img {
-        transition: all 200ms ease;
-        overflow: hidden;
-        border-radius: 0.8rem;
-        width: 110%;
-        object-fit: contain;
+        
     }
     &  > h4 {
         padding: 0 2rem;
@@ -44,4 +40,17 @@
         }
     }
 
+}
+
+.img {
+    position: relative;
+    width: 100%;
+    min-height: 30rem;
+    transition: all 200ms ease;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    & > img {
+        width: 100%;
+        object-fit: contain;    
+    }
 }

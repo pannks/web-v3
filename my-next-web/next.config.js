@@ -14,12 +14,12 @@ const withMDX = require("@next/mdx")({
 });
 
 const nextConfig = {
-    output: "export",
+    // output: "export",
     distDir: "build",
     trailingSlash: true,
-    images: {
-        loader: "custom",
-    },
+    // images: {
+    //     loader: "custom",
+    // },
 };
 
 module.exports = withMDX(nextConfig);
