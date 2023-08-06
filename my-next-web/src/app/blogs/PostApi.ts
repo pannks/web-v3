@@ -6,7 +6,7 @@ import matter from "gray-matter";
 const postsDirectory = join(process.cwd(), "/src/app/blogs/_posts");
 
 export type Items = {
-    [key: string]: string;
+    [key: string]: any;
 };
 
 export function getPostSlugs() {

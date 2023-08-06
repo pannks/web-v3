@@ -43,7 +43,7 @@ export const skillData = {
         {
             name: "NextJs",
             desc: "",
-            color: "#442561",
+            color: "#43474d",
             time: "",
             icon: SiNextdotjs,
         },

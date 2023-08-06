@@ -42,7 +42,7 @@ const BlogPage: React.FC<BlogPageProps> = async ({ params }) => {
         <>
             <div className={styles.header}>
                 <Link href={"/blogs"}>
-                    <HiChevronLeft /> All Blogs ...
+                    <HiChevronLeft /> All Blogs
                 </Link>
             </div>
             <div className={styles.page}>

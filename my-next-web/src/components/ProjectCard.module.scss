@@ -13,10 +13,7 @@
     color: var(--c-black);
     justify-self: stretch;
     font-family: var(--f-1);
-    
-    & > img {
-        
-    }
+
     &  > h4 {
         padding: 0 2rem;
         font-size: 2rem;
@@ -34,11 +31,7 @@
         font-weight: 400;
         font-family: var(--f-3);
     }
-    &:hover {
-        & > img {
-            transform: scale(1.02);
-        }
-    }
+    
 
 }
 
@@ -46,11 +39,21 @@
     position: relative;
     width: 100%;
     min-height: 30rem;
-    transition: all 200ms ease;
     overflow: hidden;
     border-radius: 0.8rem;
+    transition: all 200ms ease;
     & > img {
         width: 100%;
         object-fit: contain;    
     }
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.badge_box {
+    display: flex;
+    gap: 0.6rem;
+    padding: 1rem 2rem 0;
+    flex-wrap: wrap;
 }

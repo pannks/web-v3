@@ -11,7 +11,7 @@
         bottom:  0;
         z-index: 99;
         width: 100%;
-        padding: 1.6rem 3.2rem;
+        padding: 1.6rem 2rem;
         color: var(--c-black);
         background-color: var(--c-white);
     }
@@ -31,6 +31,15 @@
         object-fit: cover;
         z-index: 2;
         transition: all 150ms ease;
+    }
+    &__tags {
+        position: absolute;
+        display: flex;
+        gap: 0.6rem;
+        top: 1.2rem;
+        left: 2rem;
+        z-index: 999;
+        font-size: 1.4rem;
     }
     &:hover {
         cursor: pointer;

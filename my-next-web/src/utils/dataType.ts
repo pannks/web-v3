@@ -5,4 +5,12 @@ export type PostType = {
     desc: string;
     date?: string;
     content?: string;
+    category?: string[];
+};
+
+export type Tag = {
+    id: string;
+    name: string;
+    bg?: string;
+    fg?: string;
 };

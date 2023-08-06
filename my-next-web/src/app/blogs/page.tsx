@@ -5,18 +5,25 @@ import PostCard from "@/components/PostCard";
 import { PostType } from "@/utils/dataType";
 
 const BlogsPage = () => {
-    const allPosts = getAllPosts(["slug", "title", "desc", "coverImage"]);
+    const allPosts = getAllPosts([
+        "slug",
+        "title",
+        "desc",
+        "coverImage",
+        "category",
+    ]);
     return (
         <div className={styles.section__1}>
             <h1 className={styles.heading}>My Blogs</h1>
             <div className={styles.card__wrap}>
                 {allPosts.map((post) => {
-                    const { title, desc, slug, coverImage } = post;
+                    const { title, desc, slug, coverImage, category } = post;
                     const postItem: PostType = {
                         title,
                         desc,
                         slug,
                         coverImage,
+                        category,
                     };
                     return <PostCard key={post.slug} post={postItem} />;
                 })}
