@@ -123,7 +123,7 @@ export const updateUserById = async (id: string, data: Record<string, any>) => {
         });
         return response;
     } catch (err) {
-        console.log("error", err.message);
+        console.log("error", err);
     }
 };
 
@@ -156,7 +156,7 @@ export const createNewFile = async (data: Record<string, any>) => {
         try {
             await setDoc(fileDocRef, { ...data, createAt, id });
         } catch (err) {
-            return { status: "failed", error: err.message };
+            return { status: "failed", error: err };
         }
         return { status: "success" };
     }

@@ -41,11 +41,13 @@ const SettingFileCard: React.FC<SettingFileCardProps> = ({
                 password.toString()
             );
             if (res.status === "success") {
-                onCloseHandler();
-                setUsername("");
-                setPassword("");
-                router.push("./manage");
-                logIn(res.user);
+                if (res.user) {
+                    onCloseHandler();
+                    setUsername("");
+                    setPassword("");
+                    logIn(res.user);
+                    router.push("./manage");
+                }
             }
         }
     };
