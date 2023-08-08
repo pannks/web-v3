@@ -5,6 +5,7 @@ import Spinner from "@/components/Spinner";
 import { useFiles } from "@/contexts/FilesContext";
 import React from "react";
 import styles from "./page.module.scss";
+import { File } from "@/utils/dataType";
 
 const ArchivePage = () => {
     const { archives, loading } = useFiles();
@@ -21,7 +22,7 @@ const ArchivePage = () => {
             {archives && (
                 <div className={styles.files_grid}>
                     {archives.map((file) => (
-                        <FileCard key={file.id} file={file} />
+                        <FileCard key={file.id} file={file as File} />
                     ))}
                 </div>
             )}
