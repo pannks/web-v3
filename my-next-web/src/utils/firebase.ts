@@ -56,39 +56,39 @@ export const getAllDocuments = async (collectionKey: string) => {
     return querySnapshot.docs.map((ds) => ds.data());
 };
 
-export const createUserDocumentFromAuth = async (
-    userAuth,
-    additionalInformation = {}
-) => {
-    const userDocRef = doc(db, "users", userAuth.id);
+// export const createUserDocumentFromAuth = async (
+//     userAuth,
+//     additionalInformation = {}
+// ) => {
+//     const userDocRef = doc(db, "users", userAuth.id);
 
-    // console.log(userDocRef);
+//     // console.log(userDocRef);
 
-    const userSnapshot = await getDoc(userDocRef);
-    // console.log(userSnapshot.exists());
+//     const userSnapshot = await getDoc(userDocRef);
+//     // console.log(userSnapshot.exists());
 
-    if (!userSnapshot.exists()) {
-        const { id, name, img, email, status_msg, is_friend } = userAuth;
-        const createAt = new Date();
+//     if (!userSnapshot.exists()) {
+//         const { id, name, img, email, status_msg, is_friend } = userAuth;
+//         const createAt = new Date();
 
-        try {
-            await setDoc(userDocRef, {
-                id,
-                name,
-                img,
-                email,
-                status_msg,
-                is_friend,
-                createAt,
-                ...additionalInformation,
-            });
-        } catch (err) {
-            console.log("error", err.message);
-        }
-    }
+//         try {
+//             await setDoc(userDocRef, {
+//                 id,
+//                 name,
+//                 img,
+//                 email,
+//                 status_msg,
+//                 is_friend,
+//                 createAt,
+//                 ...additionalInformation,
+//             });
+//         } catch (err) {
+//             console.log("error", err.message);
+//         }
+//     }
 
-    return userSnapshot;
-};
+//     return userSnapshot;
+// };
 export const loginApi = async (username: string, password: string) => {
     const userDocRef = doc(db, "users", username);
     try {
@@ -113,7 +113,7 @@ export const loginApi = async (username: string, password: string) => {
     }
 };
 
-export const updateUserById = async (id, data) => {
+export const updateUserById = async (id: string, data: Record<string, any>) => {
     const userDocRef = doc(db, "users", id);
     // console.log(data);
 
@@ -140,7 +140,7 @@ export function generateRandomString(length: number) {
     return result;
 }
 
-export const createNewFile = async (data) => {
+export const createNewFile = async (data: Record<string, any>) => {
     if (!data) return;
 
     const gen = generateRandomString(4);
@@ -174,7 +174,7 @@ export const deleteFileById = async (id: string) => {
     }
 };
 
-export const getOrdersByUserId = async (id) => {
+export const getOrdersByUserId = async (id: string) => {
     const ordersCollectionRef = collection(db, "orders");
     const querySnapshot = await getDocs(
         query(ordersCollectionRef, where("user_id", "==", id))

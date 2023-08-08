@@ -10,13 +10,14 @@ import {
 import SettingFileCard from "./SettingFileCard";
 import { useFiles } from "@/contexts/FilesContext";
 import FileCard from "@/components/FileCard";
+import { File } from "@/utils/dataType";
 
 const TUPage = () => {
     const { files } = useFiles();
     return (
         <>
             <section className={styles.section__1}>
-                <h1 className={styles.heading}>Welcome to TU's Files</h1>
+                <h1 className={styles.heading}>Welcome to TU Files</h1>
                 <div className={styles.menus}>
                     <FileMenuCard
                         name={"1/66"}
@@ -46,7 +47,7 @@ const TUPage = () => {
                 {files && (
                     <div className={styles.files_grid}>
                         {files.map((file) => (
-                            <FileCard key={file.id} file={file} />
+                            <FileCard key={file.id} file={file as File} />
                         ))}
                     </div>
                 )}

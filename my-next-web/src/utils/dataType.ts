@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export type PostType = {
     slug: string;
     title: string;
@@ -19,7 +21,9 @@ export type File = {
     id: string;
     name: string;
     desc: string;
+    type: string;
+    sem?: string;
     url?: string;
-    createAt?: Date;
+    createAt?: Timestamp;
     subj?: string;
 };

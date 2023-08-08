@@ -7,8 +7,14 @@ import {
     formatLocalTime,
     getFileIcon,
 } from "@/utils/transform";
+import { File } from "@/utils/dataType";
+import { Url } from "next/dist/shared/lib/router/router";
 
-const FileCard = ({ file }) => {
+type FileCardProps = {
+    file: File;
+};
+
+const FileCard: React.FC<FileCardProps> = ({ file }) => {
     const icon = getFileIcon(file.type);
     let readTime = null;
     if (file.createAt) {
@@ -17,7 +23,7 @@ const FileCard = ({ file }) => {
     }
 
     return (
-        <Link href={file.url} rel="noopener noreferrer" target="_blank">
+        <Link href={file.url as Url} rel="noopener noreferrer" target="_blank">
             <div className={styles.card}>
                 <div className={styles.card__head}>
                     <div

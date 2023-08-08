@@ -5,6 +5,7 @@ import Spinner from "@/components/Spinner";
 import { useFiles } from "@/contexts/FilesContext";
 import React from "react";
 import styles from "./page.module.scss";
+import { File } from "@/utils/dataType";
 
 const ThisSemPage = () => {
     const { files, loading } = useFiles();
@@ -22,7 +23,7 @@ const ThisSemPage = () => {
                 <div className={styles.files_grid}>
                     {files?.length === 0 && "No Files"}
                     {files.map((file) => (
-                        <FileCard key={file.id} file={file} />
+                        <FileCard key={file.id} file={file as File} />
                     ))}
                 </div>
             )}

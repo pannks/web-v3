@@ -24,8 +24,11 @@ const FileRow: React.FC<FileRowProps> = ({
     onClickDel = () => {},
 }) => {
     const icon = getFileIcon(file.type);
-    const time = convertFbTimeToDate(file.createAt);
-    const readTime = formatLocalTime(time);
+    let readTime = "";
+    if (file.createAt) {
+        const time = convertFbTimeToDate(file.createAt);
+        readTime = formatLocalTime(time);
+    }
 
     return (
         <div className={styles.row}>

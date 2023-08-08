@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { Timestamp } from "firebase/firestore";
 import {
     BsFillFileEarmarkFill,
     BsFillFileEarmarkSpreadsheetFill,
@@ -6,7 +7,7 @@ import {
 } from "react-icons/bs";
 import { SiCanva } from "react-icons/si";
 
-export function convertFbTimeToDate(timestamp) {
+export function convertFbTimeToDate(timestamp: Timestamp) {
     return timestamp.toDate();
 }
 
