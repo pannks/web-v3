@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import NavSide from "@/components/NavSide";
+import Image from "next/image";
+import HomeImage from "./HomeImage";
 
 export default function Home() {
     return (
@@ -23,6 +25,9 @@ export default function Home() {
                     <HiOutlineChevronRight /> Passionate to be Fullstack
                     Developer
                 </p>
+                <div className={styles.section__1__img}>
+                    <HomeImage />
+                </div>
             </div>
             <div className={styles.section__2}>
                 <h2>Projects</h2>

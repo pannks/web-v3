@@ -6,6 +6,7 @@
 
 .section {
     &__1 {
+        position: relative;
         padding: 20vh calc(10vw + 2rem) 10vh;
         min-height: 70vh;
         background-color:  var(--c-white);
@@ -30,6 +31,22 @@
             font-family: var(--f-2);
             margin-bottom: 2rem;
             font-style: italic;
+        }
+        &__img {
+            position: absolute;
+            right: 0;
+            z-index: 1;
+            height: 40vw;
+            min-height: 22rem;
+            bottom: 0;
+            overflow: hidden;
+            & >img {
+                animation: 1s ease fadeInRight ;
+                position: relative;
+                height: 100%;
+                object-fit: contain;
+                object-position: bottom right;     
+            }
         }
     }
     &__2 {
@@ -75,4 +92,13 @@
 }
 
 
-
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    100% {
+        opacity: 100;
+        transform: translateX(0rem);
+    }
+}

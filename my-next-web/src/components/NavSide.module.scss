@@ -11,6 +11,7 @@
     transition: all 200ms ease;
     animation: fade-slide 670ms ease 0ms;
     opacity: 0.8;
+    z-index: 99;
     &:hover {
         opacity: 1;
     }
