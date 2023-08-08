@@ -30,7 +30,7 @@ const SettingFileCard: React.FC<SettingFileCardProps> = ({
         if (user?.role === "admin") {
             router.push("./manage");
         }
-        () => setShowModal(!showModal);
+        setShowModal(!showModal);
     };
 
     const handleSubmit = async (e: React.MouseEvent) => {
