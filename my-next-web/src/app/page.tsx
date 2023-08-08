@@ -7,11 +7,6 @@ import Link from "next/link";
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import NavSide from "@/components/NavSide";
 
-export const metadata: Metadata = {
-    title: "Pann's Website | Home",
-    description: "PannKs Latest Official Website 2023",
-};
-
 export default function Home() {
     return (
         <>

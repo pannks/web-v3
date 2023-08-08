@@ -10,12 +10,7 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/$1.html"
-      }
-    ]
+    "rewrites": []
   },
   "storage": {
     "rules": "storage.rules"
