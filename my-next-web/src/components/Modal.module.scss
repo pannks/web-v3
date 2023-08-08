@@ -1,0 +1,39 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2b2b2b25;
+    filter: blur(6px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9000;
+}
+
+.modal {
+    position: absolute;
+    top: 20%;
+    justify-self: center;
+    min-width: 32rem;
+    min-height: 10rem;
+    height: max-content;
+    background-color: var(--c-white);
+    border-radius: 0.8rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+    font-size: 1.4rem;
+    z-index: 9999;
+    &__btn {
+        position: absolute;
+        z-index: 1000;
+        left: calc(100% - 4rem);
+        font-size: 1.8rem;
+        background: transparent;
+        border: none;
+        color: var(--c-black);
+        &:hover {
+            background-color: var(--c-grey-100);
+        }
+    }
+}

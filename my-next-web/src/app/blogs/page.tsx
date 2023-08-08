@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import { getAllPosts } from "./PostApi";
 import PostCard from "@/components/PostCard";
 import { PostType } from "@/utils/dataType";
+import SectionBackLink from "@/components/SectionBackLink";
 
 const BlogsPage = () => {
     const allPosts = getAllPosts([
@@ -13,22 +14,26 @@ const BlogsPage = () => {
         "category",
     ]);
     return (
-        <div className={styles.section__1}>
-            <h1 className={styles.heading}>My Blogs</h1>
-            <div className={styles.card__wrap}>
-                {allPosts.map((post) => {
-                    const { title, desc, slug, coverImage, category } = post;
-                    const postItem: PostType = {
-                        title,
-                        desc,
-                        slug,
-                        coverImage,
-                        category,
-                    };
-                    return <PostCard key={post.slug} post={postItem} />;
-                })}
+        <>
+            <SectionBackLink />
+            <div className={styles.section__1}>
+                <h1 className={styles.heading}>My Blogs</h1>
+                <div className={styles.card__wrap}>
+                    {allPosts.map((post) => {
+                        const { title, desc, slug, coverImage, category } =
+                            post;
+                        const postItem: PostType = {
+                            title,
+                            desc,
+                            slug,
+                            coverImage,
+                            category,
+                        };
+                        return <PostCard key={post.slug} post={postItem} />;
+                    })}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

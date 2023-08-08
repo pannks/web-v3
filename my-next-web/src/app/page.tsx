@@ -5,6 +5,7 @@ import SectionSkill from "@/components/SectionSkill";
 import { Metadata } from "next";
 import Link from "next/link";
 import { HiOutlineChevronRight } from "react-icons/hi2";
+import NavSide from "@/components/NavSide";
 
 export const metadata: Metadata = {
     title: "Pann's Website | Home",
@@ -14,11 +15,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <>
-            <div className={styles.quicknav}>
-                <Link href={"./"}>files</Link>
-                <Link href={"./blogs"}>blogs</Link>
-                <Link href={"./about"}>about</Link>
-            </div>
+            <NavSide />
             <div className={styles.section__1}>
                 <h1>
                     Hello, My Name is <span>Pann Kaansadich</span>

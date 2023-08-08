@@ -1,0 +1,13 @@
+.back{
+    padding: 3rem 10vw 2rem ;
+    font-family: var(--f-2);
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 800;
+    & > a {
+        &:hover {
+            background-color: var(--c-primary);
+            color: var(--c-white);
+        }
+    }
+}

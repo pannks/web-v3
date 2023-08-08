@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+    z-index: 888;
     padding: 2rem 3.2rem;
     font-size: 1.2rem;
     font-family: var(--f-2);
@@ -13,7 +15,12 @@
 }
 
 .page {
-    padding: 2rem 3.2rem 3rem;
+    position: relative;
+    top: -6rem;
+    padding: 8rem 3.2rem 3rem;
+    background: var(--c-primary-light);  
+        background: -webkit-linear-gradient(to bottom, var(--c-primary-light), var((--c-white)));  
+        background: linear-gradient(to bottom, var(--c-primary-light), var(--c-white)); 
     &__desc {
         text-align: center;
         font-size: 2.0rem;
@@ -24,7 +31,7 @@
     }
     &__title {
         font-family: var(--f-1);
-        font-size: 2.8rem;
+        font-size: 3rem;
         margin: 4rem auto;
         text-align: center;
         max-width: 68rem;
@@ -40,6 +47,10 @@
         & h4 {}
         & h5 {}
         & h6 {}
+
+        & img {
+            border-radius: 0.8rem;
+        }
 
         & ul {
             padding: 0 2rem;

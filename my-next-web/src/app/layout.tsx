@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Rubik, JetBrains_Mono, Noto_Sans_Thai } from "next/font/google";
 import Footer from "@/components/Footer";
 import { DarkModeProvider } from "@/contexts/DarkModeContext";
+import NavSide from "@/components/NavSide";
+import { UserProvider } from "@/contexts/UserContext";
 
 const rubik = Rubik({
     subsets: ["latin"],
@@ -33,17 +35,19 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <DarkModeProvider>
-            <html
-                lang="en"
-                className={`${rubik.variable} ${jetBrainsMono.variable} ${notoSansThai.variable}`}
-            >
-                <body>
-                    <Navigation />
-                    {children}
-                    <Footer />
-                </body>
-            </html>
-        </DarkModeProvider>
+        <UserProvider>
+            <DarkModeProvider>
+                <html
+                    lang="en"
+                    className={`${rubik.variable} ${jetBrainsMono.variable} ${notoSansThai.variable}`}
+                >
+                    <body>
+                        <Navigation />
+                        {children}
+                        <Footer />
+                    </body>
+                </html>
+            </DarkModeProvider>
+        </UserProvider>
     );
 }

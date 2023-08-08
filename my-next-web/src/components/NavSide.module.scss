@@ -1,0 +1,37 @@
+.quicknav {
+    rotate: 90deg;
+    transform-origin: 0 0;
+    transform: translate(8rem, -3rem);
+    position: fixed;
+    background-color: var(--c-white);
+    top: 0;
+    font-family: var(--f-2);
+    display: inline-flex;
+    flex-direction: row;
+    transition: all 200ms ease;
+    animation: fade-slide 670ms ease 0ms;
+    opacity: 0.8;
+    &:hover {
+        opacity: 1;
+    }
+    & > a {
+        padding: 1rem 2.8rem;
+        transition: all 300ms ease;
+        &:hover {
+            background-color: var(--c-primary);
+            transform: translateY(-0.8rem);
+        }
+    }
+
+}
+
+@keyframes fade-slide {
+    0% {
+        opacity: 0;
+        transform: translate(8rem, 0);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translate(8rem, -3rem);
+}
+}

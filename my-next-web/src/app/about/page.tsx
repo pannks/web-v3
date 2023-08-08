@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import styles from "./page.module.scss";
+import SectionBackLink from "@/components/SectionBackLink";
 
 export const metadata: Metadata = {
     title: "Pann's Website | About Me",
@@ -8,10 +9,13 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
     return (
-        <div className={styles.section__1}>
-            <h1 className={styles.heading}>About Me</h1>
-            <p>Just someone who is lonely in the huge world</p>
-        </div>
+        <>
+            <SectionBackLink />
+            <div className={styles.section__1}>
+                <h1 className={styles.heading}>About Me</h1>
+                <p>Just someone who is lonely in the huge world</p>
+            </div>
+        </>
     );
 };
 

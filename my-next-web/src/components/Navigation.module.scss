@@ -76,3 +76,12 @@
     box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
   }
 
+.displayUser {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.user {
+  font-weight: 200;
+}

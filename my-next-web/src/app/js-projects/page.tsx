@@ -9,10 +9,12 @@ import {
     HiOutlinePresentationChartLine,
 } from "react-icons/hi2";
 import Link from "next/link";
+import SectionBackLink from "@/components/SectionBackLink";
 
 const JsProjectsPage = () => {
     return (
         <>
+            <SectionBackLink />
             <div className={styles.section__1}>
                 <h4 className={styles.heading}>Javascript Projects</h4>
                 <div className={styles.row}>
@@ -32,11 +34,6 @@ const JsProjectsPage = () => {
                         desc={"ดูผลรวมเลขจากชื่อ-นามสกุลของคุณ"}
                     />
                 </div>
-            </div>
-            <div className={styles.section__2}>
-                <Link href={"./../"}>
-                    <HiChevronLeft /> Back to Home
-                </Link>
             </div>
         </>
     );

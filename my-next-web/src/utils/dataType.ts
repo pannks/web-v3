@@ -14,3 +14,12 @@ export type Tag = {
     bg?: string;
     fg?: string;
 };
+
+export type File = {
+    id: string;
+    name: string;
+    desc: string;
+    url?: string;
+    createAt?: Date;
+    subj?: string;
+};

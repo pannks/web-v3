@@ -1,0 +1,58 @@
+.card {
+    height: 100%;
+    padding: 1.2rem 2.2rem;
+    border-radius: 0.6rem;
+    background-color: var(--c-white);
+    border: 0.1rem solid var(--c-grey-100);
+    transition: all 200ms ease;
+    &__head {
+        display: grid;
+        grid-template-columns: 4.8rem 1fr;
+        
+        
+    }
+    &__grid {
+        &__1 {
+            display: flex;
+            & > svg {
+                align-self: center;
+                justify-self: start;
+                font-size: 3.2rem;
+            }
+        }
+        &__2 {
+            & span {
+                margin-bottom: 0.3rem;
+            }
+        }
+        &__3 {
+            grid-column: 1/-1;
+        }
+    }
+   
+    &__name {
+        display: flex;
+        word-wrap: break-word;
+        margin: 0 auto 0.6rem;
+        font-size: 1.4rem;
+        font-family: var(--f-3);
+        font-weight: 500;
+
+    }
+    &__sem {
+        margin: 0 0.6rem;
+        font-size: 1.0rem;
+        font-family: var(--f-2);
+    }
+    &__desc{
+        border-top: 0.1rem solid var(--c-grey-100);
+        padding-top: 0.6rem;
+        font-size: 1.2rem;
+        font-family: var(--f-3);
+    }
+    &:hover {
+        background-color: var(--c-primary-light);
+        border: 0.1rem solid var(--c-primary);
+        box-shadow: var(--c-primary-sh)  0px 2px 10px;
+    }
+}
