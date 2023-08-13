@@ -9,6 +9,7 @@ type FileMenuCardProps = {
     icon?: React.ReactNode;
     fg?: string;
     bg?: string;
+    desc?: string;
 };
 
 export interface CSSPropertiesWithVars extends CSSProperties {
@@ -22,6 +23,7 @@ const FileMenuCard: React.FC<FileMenuCardProps> = ({
     icon,
     fg = "#FFF",
     bg = "#FFF",
+    desc = "",
 }) => {
     return (
         <Link
@@ -37,6 +39,7 @@ const FileMenuCard: React.FC<FileMenuCardProps> = ({
         >
             {icon}
             <h3>{name}</h3>
+            <p>{desc}</p>
         </Link>
     );
 };

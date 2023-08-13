@@ -7,14 +7,14 @@
         font-family: var(--f-1);
         padding: 10rem 10vw 6rem;
         background: var(--c-primary-light);  
-        background: -webkit-linear-gradient(to bottom, var(--c-primary-light), var((--c-white)));  
-        background: linear-gradient(to bottom, var(--c-primary-light), var(--c-white)); 
+        background: -webkit-linear-gradient(to bottom, var(--c-primary-light), var((--c-primary-light-2)));  
+        background: linear-gradient(to bottom, var(--c-primary-light), var(--c-primary-light-2)); 
     }
 
     &__double {
         font-family: var(--f-1);
         display: flex;
-        padding: 2rem 10vw;
+        padding: 4rem 10vw 2rem;
         flex-direction: column;
         gap: 6rem;
 

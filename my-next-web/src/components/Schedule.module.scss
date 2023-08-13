@@ -36,7 +36,7 @@
         gap: 0.4rem;
         grid-area: 2/2/3/3;
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: 2fr 3fr 3fr 2fr 3fr 3fr 2fr;
         grid-template-rows: repeat(5, 1fr);
     }
 }

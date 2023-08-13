@@ -25,21 +25,24 @@ const TUPage = () => {
                         name={"1/66"}
                         to={"/TU/166"}
                         icon={<BsPinAngleFill />}
-                        fg="#ffd240"
-                        bg="#ffe60025"
+                        fg="#ffc629"
+                        bg="#ffd0003d"
+                        desc="รวมไฟล์เทอมนี้"
                     />
                     <FileMenuCard
                         name={"Archives"}
                         to={"/TU/archive"}
                         icon={<BsBookmarkCheckFill />}
-                        fg="#f56666"
-                        bg="#ff295f23"
+                        fg="#db545b"
+                        bg="#ff295f3d"
+                        desc="รวมไฟล์เทอมก่อนหน้า"
                     />
                     <SettingFileCard
                         name={"Manage Files"}
                         icon={<BsGearFill />}
-                        fg="#40b6d4"
-                        bg="#00d9ff23"
+                        fg="#139fe0"
+                        bg="#00d9ff3d"
+                        desc="จัดการไฟล์ (เฉพาะแอดมิน)"
                     />
                 </div>
             </section>

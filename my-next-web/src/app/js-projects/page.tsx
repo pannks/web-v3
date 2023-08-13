@@ -22,16 +22,25 @@ const JsProjectsPage = () => {
                         icon={<HiOutlineCurrencyDollar />}
                         name={"MK201 Price Calculation"}
                         desc={"คำนวณการตั้งราคาแบบต่างๆ"}
+                        href={
+                            "https://pannks.000webhostapp.com/project/mk201.html"
+                        }
                     />
                     <JsProjCard
                         icon={<HiOutlinePresentationChartLine />}
                         name={"Break Even Analysis"}
                         desc={"คำนวณจุดคุ้มทุน"}
+                        href={
+                            "https://pannks.000webhostapp.com/project/breakeven.html"
+                        }
                     />
                     <JsProjCard
                         icon={<HiOutlineIdentification />}
                         name={"Name Numeric Calculation"}
                         desc={"ดูผลรวมเลขจากชื่อ-นามสกุลของคุณ"}
+                        href={
+                            "https://pannks.000webhostapp.com/project/hello.html"
+                        }
                     />
                 </div>
             </div>

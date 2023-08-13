@@ -12,6 +12,7 @@ type SettingFileCardProps = {
     icon?: React.ReactNode;
     fg?: string;
     bg?: string;
+    desc?: string;
 };
 
 const SettingFileCard: React.FC<SettingFileCardProps> = ({
@@ -19,6 +20,7 @@ const SettingFileCard: React.FC<SettingFileCardProps> = ({
     icon,
     fg = "#FFF",
     bg = "#FFF",
+    desc = "",
 }) => {
     const [showModal, setShowModal] = useState(false);
     const [username, setUsername] = useState("");
@@ -68,6 +70,7 @@ const SettingFileCard: React.FC<SettingFileCardProps> = ({
             >
                 {icon}
                 <h3>{name}</h3>
+                <p>{desc}</p>
             </div>
             {showModal && (
                 <Modal onClose={onCloseHandler}>
