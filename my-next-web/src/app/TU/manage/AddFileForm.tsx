@@ -9,7 +9,7 @@ const AddFileForm = () => {
     const { revalidate } = useFiles();
     const [name, setName] = useState("");
     const [desc, setDesc] = useState("");
-    const [subj, setSubj] = useState("");
+    const [subj, setSubj] = useState("_private");
     const [url, setUrl] = useState("");
     const [type, setType] = useState("doc");
 
@@ -58,12 +58,19 @@ const AddFileForm = () => {
                     value={desc}
                 />
                 <label htmlFor="subj">วิชา</label>
-                <input
+                <select
                     id="subj"
-                    type="text"
-                    onChange={(e) => setSubj(e.target.value)}
                     value={subj}
-                />
+                    onChange={(e) => setSubj(e.target.value)}
+                >
+                    <option value="_private">_private</option>
+                    <option value="JC461">JC461</option>
+                    <option value="JC462">JC462</option>
+                    <option value="JC463">JC463</option>
+                    <option value="JC360">JC360</option>
+                    <option value="JC369">JC369</option>
+                    <option value="IS462">IS462</option>
+                </select>
                 <label htmlFor="url">ลิงก์</label>
                 <input
                     id="url"
@@ -79,6 +86,8 @@ const AddFileForm = () => {
                 >
                     <option value="doc">Google Docs</option>
                     <option value="xls">Spread Sheet</option>
+                    <option value="pdf">PDF</option>
+                    <option value="vdo">VDO</option>
                     <option value="canva">Canva</option>
                     <option value="drive">Google Drive</option>
                     <option value="web">Website</option>

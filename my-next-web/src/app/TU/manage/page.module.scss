@@ -15,12 +15,12 @@
 }
 
 .headerCollapse {
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
     font-size: 1.6rem;
     font-family: var(--f-3);
     padding: 1.2rem 1.4rem;
     background-color: var(--c-grey-100);
+    border-radius: 0.6rem;
     &:hover {
         background-color: var(--c-grey-200);
     }

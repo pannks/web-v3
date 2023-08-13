@@ -5,7 +5,7 @@ import { useUser } from "@/contexts/UserContext";
 import Spinner from "@/components/Spinner";
 import AddFileForm from "./AddFileForm";
 import FilePreview from "./FilePreview";
-import { HiChevronDown, HiChevronUp } from "react-icons/hi2";
+import Modal from "@/components/Modal";
 
 const ManagePage = () => {
     const { user, loading } = useUser();
@@ -13,7 +13,6 @@ const ManagePage = () => {
 
     return (
         <div className={styles.page}>
-            <h4 className={styles.heading}>Manage Files</h4>
             {loading && <Spinner />}
             {!user && !loading && <div>Unauthorized [403]</div>}
             {user && (
@@ -22,10 +21,13 @@ const ManagePage = () => {
                         className={styles.headerCollapse}
                         onClick={() => setShowAddForm(!showAddForm)}
                     >
-                        <h5>เพิ่มไฟล์</h5>
-                        {showAddForm ? <HiChevronUp /> : <HiChevronDown />}
+                        <h5>เพิ่มไฟล์ 1/66</h5>
                     </div>
-                    {showAddForm && <AddFileForm />}
+                    {showAddForm && (
+                        <Modal onClose={() => setShowAddForm(false)}>
+                            <AddFileForm />
+                        </Modal>
+                    )}
                     <h5>รายการทั้งหมด</h5>
                     <FilePreview />
                 </>

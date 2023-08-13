@@ -12,9 +12,10 @@ import { Url } from "next/dist/shared/lib/router/router";
 
 type FileCardProps = {
     file: File;
+    showSubj?: boolean;
 };
 
-const FileCard: React.FC<FileCardProps> = ({ file }) => {
+const FileCard: React.FC<FileCardProps> = ({ file, showSubj = true }) => {
     const icon = getFileIcon(file.type);
     let readTime = null;
     if (file.createAt) {
@@ -33,16 +34,22 @@ const FileCard: React.FC<FileCardProps> = ({ file }) => {
                         {icon.i()}
                     </div>
                     <div className={styles.card__grid__2}>
-                        <Badge bg="var(--c-grey-200)">{file.subj}</Badge>
-                        <span className={styles.card__sem}>{file.sem} </span>
+                        {showSubj && (
+                            <Badge bg="var(--c-grey-200)">{file.subj}</Badge>
+                        )}
+                        {file.sem && (
+                            <span className={styles.card__sem}>
+                                {file.sem}{" "}
+                            </span>
+                        )}
                         <h4 className={styles.card__name}>{file.name}</h4>
                         {readTime && <p>{readTime}</p>}
                     </div>
-                    {/* <div className={styles.card__grid__3}>
+                    <div className={styles.card__grid__3}>
                         {file.desc !== "" && (
                             <p className={styles.card__desc}>{file.desc}</p>
                         )}
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </Link>

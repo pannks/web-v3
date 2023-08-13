@@ -11,9 +11,11 @@ import SettingFileCard from "./SettingFileCard";
 import { useFiles } from "@/contexts/FilesContext";
 import FileCard from "@/components/FileCard";
 import { File } from "@/utils/dataType";
+import Schedule from "@/components/Schedule";
+import Spinner from "@/components/Spinner";
 
 const TUPage = () => {
-    const { files } = useFiles();
+    const { files, loading } = useFiles();
     return (
         <>
             <section className={styles.section__1}>
@@ -41,16 +43,27 @@ const TUPage = () => {
                     />
                 </div>
             </section>
-            <section className={styles.section__2}>
-                <h2 className={styles.heading}>Recently</h2>
-                {files?.length === 0 && "No Files"}
-                {files && (
-                    <div className={styles.files_grid}>
-                        {files.map((file) => (
-                            <FileCard key={file.id} file={file as File} />
-                        ))}
-                    </div>
-                )}
+            <section className={styles.section__double}>
+                <div className={styles.section__sub}>
+                    <h2 className={styles.heading__2}>Schedule 1/66</h2>
+                    <Schedule />
+                </div>
+                <div className={styles.section__sub}>
+                    <h2 className={styles.heading__2}>Recently</h2>
+                    {files?.length === 0 && "No Files"}
+                    {loading && (
+                        <div className="spinner_container">
+                            <Spinner />
+                        </div>
+                    )}
+                    {files && (
+                        <div className={styles.files_grid}>
+                            {files.map((file) => (
+                                <FileCard key={file.id} file={file as File} />
+                            ))}
+                        </div>
+                    )}
+                </div>
             </section>
         </>
     );

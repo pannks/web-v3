@@ -9,8 +9,8 @@
     --c-grey-700: #666666;
     
     --c-primary: #00ccff;
-    --c-primary-2: #ff9900;
-    --c-primary-light: #eef9ff;
+    --c-primary-2: #ff5ca0;
+    --c-primary-light: #e8faff;
     --c-primary-light-2: #fbf1ff;
     
     --c-primary-sh: #46464638;
@@ -32,6 +32,26 @@
     --code-hue-5-2: #c91243;
     --code-hue-6:   #986801;
     --code-hue-6-2: #c18401;
+
+    --c-chip-1:#ff9290;
+    --c-chip-2: #ff5b91;
+    --c-chip-3: #df78f1;
+    --c-chip-4: #b68efa;
+    --c-chip-5: #7686e2;
+    --c-chip-6: #77c1fd;
+    --c-chip-7: #68cfff;
+    --c-chip-8: #64e1f1;
+    --c-chip-9: #3bc5b7;
+    --c-chip-10: #84dd81;
+    --c-chip-11: #b5eb78;
+    --c-chip-12: #d2fa74;
+    --c-chip-13: #fced6d;
+    --c-chip-14: #fcdc68;
+    --c-chip-15: #ffc65d;
+    --c-chip-16: #ff7043;
+    --c-chip-17: #8d6e63;
+    --c-chip-18: #bdbdbd;
+
   }
   &.dark-mode {
     --c-white: #19191b;
@@ -66,7 +86,48 @@
     --code-hue-5-2: #be5046;
     --code-hue-6:   #d19a66;
     --code-hue-6-2: #e6c07b;
+
+    --c-chip-1: #d32f2f;
+    --c-chip-2: #c2185b;
+    --c-chip-3: #7b1fa2;
+    --c-chip-4: #512da8;
+    --c-chip-5: #303f9f;
+    --c-chip-6: #1976d2;
+    --c-chip-7: #0288d1;
+    --c-chip-8: #0097a7;
+    --c-chip-9: #00796b;
+    --c-chip-10: #388e3c;
+    --c-chip-11: #689f38;
+    --c-chip-12: #afb42b;
+    --c-chip-13: #f9a825;
+    --c-chip-14: #ff8f00;
+    --c-chip-15: #f57c00;
+    --c-chip-16: #e64a19;
+    --c-chip-17: #5d4037;
+    --c-chip-18: #616161;
   }
+
+  --c-gb-white: #FFF;
+  --c-gb-black: #19191b;
+  
+  --c-chip-100-1: #ffebee;
+  --c-chip-100-2: #fce4ec;
+  --c-chip-100-3: #f3e5f5;
+  --c-chip-100-4: #ede7f6;
+  --c-chip-100-5: #e8eaf6;
+  --c-chip-100-6: #e3f2fd;
+  --c-chip-100-7: #e1f5fe;
+  --c-chip-100-8: #e0f7fa;
+  --c-chip-100-9: #e0f2f1;
+  --c-chip-100-10: #e8f5e9;
+  --c-chip-100-11: #f1f8e9;
+  --c-chip-100-12: #f9fbe7;
+  --c-chip-100-13: #fffde7;
+  --c-chip-100-14: #fff8e1;
+  --c-chip-100-15: #fff3e0;
+  --c-chip-100-16: #fbe9e7;
+  --c-chip-100-17: #efebe9;
+  --c-chip-100-18: #fafafa;
 }
 
 * {
