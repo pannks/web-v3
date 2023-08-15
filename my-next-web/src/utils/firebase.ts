@@ -126,6 +126,18 @@ export const updateUserById = async (id: string, data: Record<string, any>) => {
         console.log("error", err);
     }
 };
+export const updateFileById = async (id: string, data: Record<string, any>) => {
+    const fileDocRef = doc(db, "files", id);
+
+    try {
+        const response = await updateDoc(fileDocRef, {
+            ...data,
+        });
+        return response;
+    } catch (err) {
+        console.log("error", err);
+    }
+};
 
 export function generateRandomString(length: number) {
     const characters =

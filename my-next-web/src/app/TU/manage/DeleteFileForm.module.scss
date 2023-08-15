@@ -18,3 +18,10 @@
         background-color: var(--c-grey);
     }
 }
+
+.form {
+    font-family: var(--f-1);
+    & > h4 {
+        margin-bottom: 1.2rem;
+    }
+}

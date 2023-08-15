@@ -9,11 +9,15 @@ import Modal from "@/components/Modal";
 import DeleteFileForm from "./DeleteFileForm";
 import { deleteFileById } from "@/utils/firebase";
 import SubjRow from "@/components/SubjRow";
+import EditFileForm from "./EditfileForm";
 
 const FilePreview = () => {
     const { files, loading, revalidate } = useFiles();
     const [showDelModal, setShowDelModal] = useState(false);
-    const [selectedId, setSelectedId] = useState<undefined | string>(undefined);
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [selectedFile, setSelectedFile] = useState<undefined | File>(
+        undefined
+    );
 
     const categorized =
         files?.reduce((groups, item) => {
@@ -25,9 +29,14 @@ const FilePreview = () => {
             return groups;
         }, {}) ?? {};
 
-    const willDelete = (id: string) => {
+    const willDelete = (file: File) => {
         setShowDelModal(true);
-        setSelectedId(id);
+        setSelectedFile(file);
+    };
+
+    const willEdit = (file: File) => {
+        setShowEditModal(true);
+        setSelectedFile(file);
     };
 
     const onDelete = async (id: string) => {
@@ -56,6 +65,7 @@ const FilePreview = () => {
                                 key={file.id}
                                 file={file as File}
                                 onClickDel={willDelete}
+                                onClickEdit={willEdit}
                             />
                         ))}
                     </SubjRow>
@@ -64,9 +74,17 @@ const FilePreview = () => {
             {showDelModal && (
                 <Modal onClose={() => setShowDelModal(false)}>
                     <DeleteFileForm
-                        id={selectedId ?? ""}
+                        file={selectedFile}
                         onCancel={() => setShowDelModal(false)}
                         onDelete={onDelete}
+                    />
+                </Modal>
+            )}
+            {showEditModal && (
+                <Modal onClose={() => setShowEditModal(false)}>
+                    <EditFileForm
+                        file={selectedFile}
+                        onClose={() => setShowEditModal(false)}
                     />
                 </Modal>
             )}

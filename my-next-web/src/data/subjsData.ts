@@ -4,7 +4,7 @@ export const ThisSemSubjs = [
         room: "COM310",
         name: "",
         desc: "",
-        c: "var(--c-chip-1)",
+        c: "var(--c-chip-16)",
         grid: "5/2/6/4",
     },
 
@@ -13,7 +13,7 @@ export const ThisSemSubjs = [
         room: "MC420",
         name: "",
         desc: "",
-        c: "var(--c-chip-3)",
+        c: "var(--c-chip-4)",
         grid: "3/5/4/7",
     },
 
@@ -22,15 +22,15 @@ export const ThisSemSubjs = [
         room: "SC3-229",
         name: "",
         desc: "",
-        c: "var(--c-chip-6)",
+        c: "var(--c-chip-7)",
         grid: "4/5/5/7",
     },
     {
-        subj: "JC461",
-        room: "SC3-222",
+        subj: "JC208",
+        room: "SC3-229",
         name: "",
         desc: "",
-        c: "var(--c-chip-8)",
+        c: "var(--c-chip-11)",
         grid: "4/2/5/4",
     },
     {
@@ -46,7 +46,7 @@ export const ThisSemSubjs = [
         room: "SC3-221",
         name: "",
         desc: "",
-        c: "var(--c-chip-15)",
+        c: "var(--c-chip-14)",
         grid: "2/2/3/4",
     },
 ];

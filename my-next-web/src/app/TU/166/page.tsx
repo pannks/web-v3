@@ -29,13 +29,19 @@ const ThisSemPage = () => {
                     <Spinner />
                 </div>
             )}
-            {Object.keys(categorized).map((subj, i) => (
-                <SubjRow key={subj} subj={subj} index={i + 1}>
-                    {categorized[subj].map((file: File) => (
-                        <FileCard key={file.id} file={file as File} showSubj={false} />
-                    ))}
-                </SubjRow>
-            ))}
+            <div className={styles.folder_grid}>
+                {Object.keys(categorized).map((subj, i) => (
+                    <SubjRow key={subj} subj={subj} index={i + 1}>
+                        {categorized[subj].map((file: File) => (
+                            <FileCard
+                                key={file.id}
+                                file={file as File}
+                                showSubj={false}
+                            />
+                        ))}
+                    </SubjRow>
+                ))}
+            </div>
         </div>
     );
 };

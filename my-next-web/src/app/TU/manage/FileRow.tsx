@@ -15,7 +15,7 @@ import { File } from "@/utils/dataType";
 type FileRowProps = {
     file: File;
     onClickEdit?: (file: File) => void;
-    onClickDel?: (id: string) => void;
+    onClickDel?: (file: File) => void;
 };
 
 const FileRow: React.FC<FileRowProps> = ({
@@ -41,7 +41,7 @@ const FileRow: React.FC<FileRowProps> = ({
             <button className={styles.edit} onClick={() => onClickEdit(file)}>
                 <HiOutlinePencilSquare />
             </button>
-            <button className={styles.del} onClick={() => onClickDel(file.id)}>
+            <button className={styles.del} onClick={() => onClickDel(file)}>
                 <HiOutlineTrash />
             </button>
             <div className={styles.url}>
