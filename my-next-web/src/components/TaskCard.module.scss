@@ -15,7 +15,7 @@
 
 .card {
     display: grid;
-    grid-template-columns: 3fr 5fr;
+    grid-template-columns: 1fr max-content;
     padding: 0.8rem 2.0rem;
     border-radius: 0.6rem;
     border: 0.1rem solid transparent;
@@ -37,9 +37,9 @@
     display: flex;
     word-wrap: break-word;
     margin: 0 auto;
-    font-size: 1.4rem;
-    font-family: var(--f-3);
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: var(--f-1),var(--f-3);
+    font-weight: 600;
 
 }
 
