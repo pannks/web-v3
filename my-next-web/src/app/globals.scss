@@ -19,6 +19,10 @@
     --c-secondary-light: #eaf5f8;
 
     --c-selection: #ffe552;
+    --c-bg-todo: #f2fcff;
+    --c-bg-progress: #fffdf2;
+    --c-bg-done: #f4fff2;
+    --c-bg-cancel: #fff2f2;
 
     --code-base:    #fafafa;
     --code-mono-1:  #383a42;
@@ -64,15 +68,21 @@
     
     --c-primary: #78efff;
     --c-primary-2: #ff70bf;
+
     --c-primary-light: #21262b;
     --c-primary-light-2: #2c262e;
-
+    
     --c-primary-sh: #00000075;
     
     --c-secondary: #3da8c9;
     --c-secondary-light: #251e21;
-
+    
     --c-selection: #e09e2d;
+
+    --c-bg-todo: #252c30;
+    --c-bg-progress: #302c25;
+    --c-bg-done: #253025;
+    --c-bg-cancel: #302525;
 
     --code-base:    #282c34;
     --code-mono-1:  #abb2bf;

@@ -1,0 +1,51 @@
+.select {
+    display: inline-flex;
+    margin-bottom: 0.6rem;
+    border: none;
+    background-color: var(--c-grey-200);
+    color: var(--c-black);
+    border-radius: 0.4rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    padding: 0.8rem 2.0rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid transparent;
+    transition: all 200ms ease;
+}
+
+.due {
+    display: flex;
+    align-self: self-start;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    font-weight: 500;
+    & > p > span {
+        font-weight: 300;
+    }
+}
+
+.name {
+    display: flex;
+    word-wrap: break-word;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    font-family: var(--f-3);
+    font-weight: 700;
+
+}
+
+.desc{
+    color: var(--c-grey-700);
+    font-size: 1.1rem;
+    font-family: var(--f-3);
+}
+

@@ -138,6 +138,18 @@ export const updateFileById = async (id: string, data: Record<string, any>) => {
         console.log("error", err);
     }
 };
+export const updateTaskById = async (id: string, data: Record<string, any>) => {
+    const taskDocRef = doc(db, "tasks", id);
+
+    try {
+        const response = await updateDoc(taskDocRef, {
+            ...data,
+        });
+        return response;
+    } catch (err) {
+        console.log("error", err);
+    }
+};
 
 export function generateRandomString(length: number) {
     const characters =
@@ -174,6 +186,38 @@ export const createNewFile = async (data: Record<string, any>) => {
     }
 };
 
+export const createNewTask = async (data: Record<string, any>) => {
+    if (!data) return;
+
+    const gen = generateRandomString(4);
+    const id = `${data.subj}_${gen}`;
+    const taskDocRef = doc(db, "tasks", id);
+
+    const taskSnapshot = await getDoc(taskDocRef);
+
+    if (taskSnapshot.exists()) {
+        return { status: "failed", error: "already existed" };
+    } else {
+        const { name, desc, subj, status, dueStr } = data;
+        const createAt = new Date();
+        const due = new Date(dueStr);
+        try {
+            await setDoc(taskDocRef, {
+                name,
+                desc,
+                subj,
+                status,
+                due,
+                createAt,
+                id,
+            });
+        } catch (err) {
+            return { status: "failed", error: err };
+        }
+        return { status: "success" };
+    }
+};
+
 export const deleteFileById = async (id: string) => {
     const fileDocRef = doc(db, "files", id);
     const fileSnapshot = await getDoc(fileDocRef);
@@ -183,6 +227,17 @@ export const deleteFileById = async (id: string) => {
         return { status: "success" };
     } else {
         return { status: "failed", error: "not found file id" };
+    }
+};
+export const deleteTaskById = async (id: string) => {
+    const taskDocRef = doc(db, "tasks", id);
+    const taskSnapshot = await getDoc(taskDocRef);
+
+    if (taskSnapshot.exists()) {
+        await deleteDoc(taskDocRef);
+        return { status: "success" };
+    } else {
+        return { status: "failed", error: "not found task id" };
     }
 };
 

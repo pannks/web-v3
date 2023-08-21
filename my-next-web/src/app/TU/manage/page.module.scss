@@ -14,13 +14,17 @@
     margin: 0 0 2rem;
 }
 
-.headerCollapse {
+.headerBtn {
     display: inline-flex;
+    gap: 0.6rem;
     font-size: 1.6rem;
     font-family: var(--f-3);
     padding: 1.2rem 1.4rem;
     background-color: var(--c-grey-100);
+    color: var(--c-black);
     border-radius: 0.6rem;
+    border: none;
+    margin-right: 0.6rem;
     &:hover {
         background-color: var(--c-grey-200);
     }

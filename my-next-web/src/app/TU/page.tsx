@@ -61,9 +61,14 @@ const TUPage = () => {
                     )}
                     {files && (
                         <div className={styles.files_grid}>
-                            {files.map((file) => (
-                                <FileCard key={file.id} file={file as File} />
-                            ))}
+                            {files
+                                .sort((a, b) => b.createAt - a.createAt)
+                                .map((file) => (
+                                    <FileCard
+                                        key={file.id}
+                                        file={file as File}
+                                    />
+                                ))}
                         </div>
                     )}
                 </div>

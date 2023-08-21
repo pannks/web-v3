@@ -2,30 +2,31 @@
 
 import React, { useState } from "react";
 import styles from "./AddFileForm.module.scss";
-import { createNewFile } from "@/utils/firebase";
-import { useFiles } from "@/contexts/FilesContext";
+import { createNewTask } from "@/utils/firebase";
+import { useTasks } from "@/contexts/TasksContext";
 
-const AddFileForm = () => {
-    const { revalidate } = useFiles();
+const AddTaskForm = () => {
+    const { revalidate } = useTasks();
     const [name, setName] = useState("");
     const [desc, setDesc] = useState("");
     const [subj, setSubj] = useState("_private");
-    const [url, setUrl] = useState("");
-    const [type, setType] = useState("doc");
+    const [dueDate, setDueDate] = useState("");
+    const [dueTime, setDueTime] = useState("");
 
     const onSubmit = async (e: React.MouseEvent) => {
         e.preventDefault();
+        if (name === "" || subj === "" || dueDate === "") {
+            return;
+        }
+        const dueStr = `${dueDate} ${dueTime}`;
         const data = {
             name,
             desc,
             subj,
-            url,
-            type,
+            dueStr,
+            status: "TODO",
         };
-        if (name === "" || subj === "" || url === "") {
-            return;
-        }
-        const res = await createNewFile(data);
+        const res = await createNewTask(data);
         if (res?.status === "success") {
             resetForm();
             revalidate();
@@ -36,23 +37,22 @@ const AddFileForm = () => {
         setName("");
         setDesc("");
         setSubj("");
-        setUrl("");
-        setType("");
+        setDueDate("");
+        setDueTime("");
     };
 
     return (
         <>
-            <h1 className={styles.head}>เพิ่มไฟล์</h1>
-
+            <h1 className={styles.head}>เพิ่ม Task</h1>
             <form className={styles.form}>
-                <label htmlFor="name">ชื่อไฟล์</label>
+                <label htmlFor="name">ชื่อ Task</label>
                 <input
                     id="name"
                     type="text"
                     onChange={(e) => setName(e.target.value)}
                     value={name}
                 />
-                <label htmlFor="desc">คำอธิบาย</label>
+                <label htmlFor="desc">คำอธิบาย Task</label>
                 <input
                     id="desc"
                     type="text"
@@ -73,29 +73,25 @@ const AddFileForm = () => {
                     <option value="JC369">JC369</option>
                     <option value="IS462">IS462</option>
                 </select>
-                <label htmlFor="url">ลิงก์</label>
+                <label htmlFor="due">กำหนดส่ง/เวลานัดหมาย </label>
+
                 <input
-                    id="url"
-                    type="url"
-                    onChange={(e) => setUrl(e.target.value)}
-                    value={url}
+                    id="due"
+                    onChange={(e) => setDueDate(e.target.value)}
+                    value={dueDate}
+                    placeholder="YYYY-MM-DD"
                 />
-                <label htmlFor="type">ชนิดไฟล์</label>
-                <select
-                    id="type"
-                    value={type}
-                    onChange={(e) => setType(e.target.value)}
-                >
-                    <option value="doc">Google Docs</option>
-                    <option value="xls">Spread Sheet</option>
-                    <option value="pdf">PDF</option>
-                    <option value="vdo">VDO</option>
-                    <option value="canva">Canva</option>
-                    <option value="drive">Google Drive</option>
-                    <option value="web">Website</option>
-                </select>
+                <input
+                    id="due"
+                    onChange={(e) => setDueTime(e.target.value)}
+                    value={dueTime}
+                    placeholder="HH:mm"
+                />
                 <div className={styles.form__btn}>
-                    <button className={styles.form__btn__reset} type="reset">
+                    <button
+                        className={styles.form__btn__reset}
+                        onClick={resetForm}
+                    >
                         Reset
                     </button>
                     <button
@@ -110,4 +106,4 @@ const AddFileForm = () => {
     );
 };
 
-export default AddFileForm;
+export default AddTaskForm;

@@ -1,5 +1,6 @@
 import SectionBackLink from "@/components/SectionBackLink";
 import { FilesProvider } from "@/contexts/FilesContext";
+import { TasksProvider } from "@/contexts/TasksContext";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,8 +11,10 @@ export default function TULayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <FilesProvider>
-                <SectionBackLink />
-                {children}
+                <TasksProvider>
+                    <SectionBackLink />
+                    {children}
+                </TasksProvider>
             </FilesProvider>
         </>
     );

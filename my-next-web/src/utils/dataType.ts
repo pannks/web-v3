@@ -27,3 +27,12 @@ export type File = {
     createAt?: Timestamp;
     subj?: string;
 };
+
+export type Task = {
+    id: string;
+    name: string;
+    desc: string;
+    subj?: string;
+    due: Timestamp;
+    status: string;
+};
