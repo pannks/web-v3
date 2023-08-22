@@ -13,9 +13,12 @@ import FileCard from "@/components/FileCard";
 import { File } from "@/utils/dataType";
 import Schedule from "@/components/Schedule";
 import Spinner from "@/components/Spinner";
+import { ThisSemSubjs } from "@/data/subjsData";
 
 const TUPage = () => {
     const { files, loading } = useFiles();
+    const subjInfo = (sbj: string) =>
+        ThisSemSubjs.find((subj) => subj.subj === sbj);
     return (
         <>
             <section className={styles.section__1}>
@@ -67,6 +70,7 @@ const TUPage = () => {
                                     <FileCard
                                         key={file.id}
                                         file={file as File}
+                                        bgSubj={subjInfo(file?.subj)?.c}
                                     />
                                 ))}
                         </div>

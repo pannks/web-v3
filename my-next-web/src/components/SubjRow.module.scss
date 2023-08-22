@@ -1,18 +1,26 @@
 .container {
     & > h4 {
-        font-family: var(--f-1);
+        font-family: var(--f-1), var(--f-3);
         font-size: 1.2rem;
-        font-weight: 400;
+        font-weight: 500;
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        margin-bottom: 0.6rem;
     }
     margin-bottom: 0.6rem;
     padding: 1.2rem 0.6rem;
-    border: 0.1rem solid var(--c-grey-100);
+    border: 0.2rem dotted var(--c-grey-100);
     border-radius: 0.6rem;
+}
+
+.desc {
+    padding: 1.2rem 0.6rem;
 }
 
 .gridBox {
     padding: 0.6rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(28rem,1fr));
     gap: 0.6rem;
 }

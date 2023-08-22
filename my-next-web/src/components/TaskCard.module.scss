@@ -15,20 +15,28 @@
 
 .card {
     display: grid;
-    grid-template-columns: 1fr max-content;
-    padding: 0.8rem 2.0rem;
+    grid-template-columns: 2.6rem 1fr max-content;
+    padding: 0.8rem 1.2rem;
     border-radius: 0.6rem;
     border: 0.1rem solid transparent;
     transition: all 200ms ease;
+    &:hover {
+        box-shadow: var(--c-primary-sh)  0px 1px 6px;
+    }
 }
 
 .due {
     display: flex;
     align-self: self-start;
     justify-content: flex-end;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    font-family: var(--f-2);
+    letter-spacing: -0.02rem;
+    max-width: 10rem;
+    text-align: end;
     & > p > span {
+        display: block;
         font-weight: 300;
     }
 }
@@ -40,6 +48,11 @@
     font-size: 1.2rem;
     font-family: var(--f-1),var(--f-3);
     font-weight: 600;
+    & > s {
+        font-weight: 300;
+         text-decoration-color: var(--c-chip-11);
+        
+    }
 
 }
 
@@ -49,3 +62,13 @@
     font-family: var(--f-3);
 }
 
+.icon {
+    display: flex;
+    align-items: self-start;
+    font-size: 1.2rem;
+    padding-top: 0.2rem;
+}
+
+.late {
+    color: var(--c-cancel);
+}

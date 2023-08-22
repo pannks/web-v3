@@ -10,6 +10,7 @@ import SubjRow from "@/components/SubjRow";
 import { useTasks } from "@/contexts/TasksContext";
 import TaskCard from "@/components/TaskCard";
 import { ThisSemSubjs } from "@/data/subjsData";
+import SkeletonLoading from "@/components/SkeletonLoading";
 
 const ThisSemPage = () => {
     const { files, loading: loadingFiles } = useFiles();
@@ -34,15 +35,29 @@ const ThisSemPage = () => {
 
     return (
         <div className={styles.page}>
-            <h1 className={styles.heading}> 1/66</h1>
-            {loadingFiles && (
-                <div className="spinner_container">
-                    <Spinner />
-                </div>
-            )}
+            <h1 className={styles.heading}> 1/66 Files</h1>
+            <p className={styles.announce}>
+                📣 ไม่แนะนำให้เปิดผ่าน Line Browser
+                จะทำให้การเปิดไฟล์ได้สัดส่วนที่ไม่เป็นมิตร
+            </p>
+
             <div className={styles.folder_grid}>
                 {[...subjArray, "_private"].map((subj, i) => (
-                    <SubjRow key={subj} subj={subj} index={i + 1}>
+                    <SubjRow
+                        key={subj}
+                        subj={subj}
+                        desc={ThisSemSubjs[i]?.desc}
+                        name={ThisSemSubjs[i]?.name}
+                        badgeColor={ThisSemSubjs[i]?.c}
+                    >
+                        {ctgrTask[subj]
+                            ?.sort(
+                                (a: Task, b: Task) =>
+                                    Number(a.due) - Number(b.due)
+                            )
+                            .map((task: Task) => (
+                                <TaskCard key={task.id} task={task} />
+                            ))}
                         {ctgrFile[subj]?.map((file: File) => (
                             <FileCard
                                 key={file.id}
@@ -50,9 +65,7 @@ const ThisSemPage = () => {
                                 showSubj={false}
                             />
                         ))}
-                        {ctgrTask[subj]?.map((task: Task) => (
-                            <TaskCard key={task.id} task={task} />
-                        ))}
+                        {loadingFiles && <SkeletonLoading />}
                     </SubjRow>
                 ))}
             </div>

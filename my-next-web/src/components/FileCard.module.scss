@@ -17,7 +17,12 @@
             & > svg {
                 align-self: center;
                 justify-self: start;
-                font-size: 3.2rem;
+                font-size: 2.8rem;
+            }
+        }
+        &__2 {
+           & span {
+            margin-bottom: 0.4rem;    
             }
         }
 
@@ -30,9 +35,9 @@
         display: flex;
         word-wrap: break-word;
         margin: 0 auto 0.3rem;
-        font-size: 1.4rem;
-        font-family: var(--f-3);
-        font-weight: 500;
+        font-size: 1.2rem;
+        font-family: var(--f-1), var(--f-3);
+        font-weight: 600;
 
     }
     &__sem {

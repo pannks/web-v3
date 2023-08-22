@@ -6,23 +6,34 @@
 
 .folder_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     gap: 1.2rem;
 }
 
 .page {
-    margin: 2rem 10vw;
+    margin: 4rem 10vw;
     font-family: var(--f-1);
 }
 
 
 .heading {
     font-family: var(--f-1);
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     margin: 0 0 2rem;
+    display: inline-flex;
+    background-image: linear-gradient(to left,#e78686,#fdbb2d); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;  
     &__2 {
         font-size: 1.6rem;
         margin:  1.6rem 0;
         font-weight: 400;
     }
+}
+
+.announce {
+    font-family: var(--f-3);
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    color: var(--c-grey-700);
 }

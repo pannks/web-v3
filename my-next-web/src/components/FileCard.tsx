@@ -13,9 +13,14 @@ import { Url } from "next/dist/shared/lib/router/router";
 type FileCardProps = {
     file: File;
     showSubj?: boolean;
+    bgSubj?: string;
 };
 
-const FileCard: React.FC<FileCardProps> = ({ file, showSubj = true }) => {
+const FileCard: React.FC<FileCardProps> = ({
+    file,
+    showSubj = true,
+    bgSubj = "var(--c-grey-200)",
+}) => {
     const icon = getFileIcon(file.type);
     let readTime = null;
     if (file.createAt) {
@@ -34,9 +39,7 @@ const FileCard: React.FC<FileCardProps> = ({ file, showSubj = true }) => {
                         {icon.i()}
                     </div>
                     <div className={styles.card__grid__2}>
-                        {showSubj && (
-                            <Badge bg="var(--c-grey-200)">{file.subj}</Badge>
-                        )}
+                        {showSubj && <Badge bg={bgSubj}>{file.subj}</Badge>}
                         {file.sem && (
                             <span className={styles.card__sem}>
                                 {file.sem}{" "}

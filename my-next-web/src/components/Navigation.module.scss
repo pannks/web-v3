@@ -47,7 +47,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f4f4f5;
+    background-color: var(--c-grey-100);
     transition: .4s;
     border-radius: 30px;
   }
@@ -61,20 +61,20 @@
     left: var(--slider-offset,0.3em);
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    background: linear-gradient(40deg,#ffe44e,#ff8c00 70%);
     ;
    transition: .4s;
   }
 
   .toggleTheme input:checked + .slider {
-    background-color: #303136;
+    background-color: var(--c-grey-100);
   }
 
   .toggleTheme input:checked + .slider:before {
     left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
-    background: #303136;
+    background: var(--c-grey-100);
     /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
-    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+    box-shadow: inset -3px -2px 5px -2px #4a2fac, inset -10px -4px 0 0 #4bbaff;
   }
 
 .displayUser {

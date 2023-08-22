@@ -8,6 +8,12 @@ import {
 } from "@/utils/transform";
 import Badge from "./Badge";
 import { HiMiniTrash } from "react-icons/hi2";
+import {
+    compareAsc,
+    compareDesc,
+    formatDistance,
+    formatDistanceStrict,
+} from "date-fns";
 
 type TaskCardProps = {
     task: Task;
@@ -23,10 +29,14 @@ const TaskCard: React.FC<TaskCardProps> = ({
     onDeleteTask = () => null,
 }) => {
     const statusInfo = getStatusInfo(task.status);
-    let readTime = null;
+    let fullTime,
+        dsTime = null;
+    let isLate = false;
     if (task.due) {
         const time = convertFbTimeToDate(task.due);
-        readTime = formatLocalTime(time);
+        fullTime = formatLocalTime(time);
+        dsTime = formatDistanceStrict(time, new Date(), { addSuffix: true });
+        isLate = Boolean(compareAsc(time, new Date()) - 1);
     }
 
     return (
@@ -37,17 +47,35 @@ const TaskCard: React.FC<TaskCardProps> = ({
                 backgroundColor: `${statusInfo.bg}`,
             }}
         >
+            <div className={styles.icon} style={{ color: statusInfo.fg }}>
+                {statusInfo.i?.()}
+            </div>
             <div>
-                <h4 className={styles.name}>{task.name}</h4>
+                {task.status === "DONE" ? (
+                    <h4 className={styles.name}>
+                        <s>{task.name}</s>
+                    </h4>
+                ) : (
+                    <h4 className={styles.name}>{task.name}</h4>
+                )}
                 <p className={styles.desc}>{task.desc}</p>
             </div>
             <div className={styles.due}>
-                <p>{readTime}</p>
+                {task.status === "DONE" ? (
+                    <p>
+                        <span>DONE</span>
+                    </p>
+                ) : (
+                    <p className={isLate ? styles.late : ""}>
+                        {dsTime}
+                        <span>{fullTime}</span>
+                    </p>
+                )}
             </div>
             {canEdit && (
                 <>
+                    <h4>{task.subj}</h4>
                     <div>
-                        <h4>{task.subj}</h4>
                         <select
                             defaultValue={task.status}
                             className={styles.select}
