@@ -26,6 +26,7 @@ export type File = {
     url?: string;
     createAt?: Timestamp;
     subj?: string;
+    password?: string;
 };
 
 export type Task = {

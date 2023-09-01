@@ -14,6 +14,7 @@ import { File } from "@/utils/dataType";
 import Schedule from "@/components/Schedule";
 import Spinner from "@/components/Spinner";
 import { ThisSemSubjs } from "@/data/subjsData";
+import SectionBackLink from "@/components/SectionBackLink";
 
 const TUPage = () => {
     const { files, loading } = useFiles();
@@ -21,6 +22,7 @@ const TUPage = () => {
         ThisSemSubjs.find((subj) => subj.subj === sbj);
     return (
         <>
+            <SectionBackLink />
             <section className={styles.section__1}>
                 <h1 className={styles.heading}>Welcome to TU Files</h1>
                 <div className={styles.menus}>

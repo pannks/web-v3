@@ -34,7 +34,7 @@ export const ThisSemSubjs = [
     },
     {
         subj: "JC462",
-        room: "SC3-223",
+        room: "SC3-230",
         name: "การจัดการโฆษณา",
         desc: "",
         c: "var(--c-chip-12)",

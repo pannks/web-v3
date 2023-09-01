@@ -11,6 +11,7 @@ import { useTasks } from "@/contexts/TasksContext";
 import TaskCard from "@/components/TaskCard";
 import { ThisSemSubjs } from "@/data/subjsData";
 import SkeletonLoading from "@/components/SkeletonLoading";
+import SectionBackLink from "@/components/SectionBackLink";
 
 const ThisSemPage = () => {
     const { files, loading: loadingFiles } = useFiles();
@@ -34,42 +35,41 @@ const ThisSemPage = () => {
     const subjArray = ThisSemSubjs.map((subjObj) => subjObj.subj);
 
     return (
-        <div className={styles.page}>
-            <h1 className={styles.heading}> 1/66 Files</h1>
-            <p className={styles.announce}>
-                📣 ไม่แนะนำให้เปิดผ่าน Line Browser
-                จะทำให้การเปิดไฟล์ได้สัดส่วนที่ไม่เป็นมิตร
-            </p>
+        <>
+            <SectionBackLink />
+            <div className={styles.page}>
+                <h1 className={styles.heading}> 1/66 Files</h1>
 
-            <div className={styles.folder_grid}>
-                {[...subjArray, "_private"].map((subj, i) => (
-                    <SubjRow
-                        key={subj}
-                        subj={subj}
-                        desc={ThisSemSubjs[i]?.desc}
-                        name={ThisSemSubjs[i]?.name}
-                        badgeColor={ThisSemSubjs[i]?.c}
-                    >
-                        {ctgrTask[subj]
-                            ?.sort(
-                                (a: Task, b: Task) =>
-                                    Number(a.due) - Number(b.due)
-                            )
-                            .map((task: Task) => (
-                                <TaskCard key={task.id} task={task} />
+                <div className={styles.folder_grid}>
+                    {[...subjArray, "_private"].map((subj, i) => (
+                        <SubjRow
+                            key={subj}
+                            subj={subj}
+                            desc={ThisSemSubjs[i]?.desc}
+                            name={ThisSemSubjs[i]?.name}
+                            badgeColor={ThisSemSubjs[i]?.c}
+                        >
+                            {ctgrTask[subj]
+                                ?.sort(
+                                    (a: Task, b: Task) =>
+                                        Number(a.due) - Number(b.due)
+                                )
+                                .map((task: Task) => (
+                                    <TaskCard key={task.id} task={task} />
+                                ))}
+                            {ctgrFile[subj]?.map((file: File) => (
+                                <FileCard
+                                    key={file.id}
+                                    file={file as File}
+                                    showSubj={false}
+                                />
                             ))}
-                        {ctgrFile[subj]?.map((file: File) => (
-                            <FileCard
-                                key={file.id}
-                                file={file as File}
-                                showSubj={false}
-                            />
-                        ))}
-                        {loadingFiles && <SkeletonLoading />}
-                    </SubjRow>
-                ))}
+                            {loadingFiles && <SkeletonLoading />}
+                        </SubjRow>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

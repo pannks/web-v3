@@ -1,4 +1,6 @@
-import React, { ReactElement } from "react";
+"use client";
+
+import React, { ReactElement, useEffect, useState } from "react";
 import styles from "./FileCard.module.scss";
 import Badge from "./Badge";
 import Link from "next/link";
@@ -9,6 +11,8 @@ import {
 } from "@/utils/transform";
 import { File } from "@/utils/dataType";
 import { Url } from "next/dist/shared/lib/router/router";
+import Modal from "./Modal";
+import { HiLockClosed } from "react-icons/hi2";
 
 type FileCardProps = {
     file: File;
@@ -21,6 +25,8 @@ const FileCard: React.FC<FileCardProps> = ({
     showSubj = true,
     bgSubj = "var(--c-grey-200)",
 }) => {
+    const [textPassword, setTextPassword] = useState("");
+    const [showVerify, setShowVerify] = useState(false);
     const icon = getFileIcon(file.type);
     let readTime = null;
     if (file.createAt) {
@@ -28,9 +34,30 @@ const FileCard: React.FC<FileCardProps> = ({
         readTime = formatLocalTime(time);
     }
 
+    const openFile = () => {
+        window.open(file.url, "_blank", "rel=noopener noreferrer");
+        setTextPassword("");
+        setShowVerify(false);
+    };
+
+    const verify = () => {
+        setShowVerify(true);
+        if (textPassword === file.password) openFile();
+    };
+
+    useEffect(() => {
+        if (textPassword !== "") {
+            verify();
+        }
+    }, [textPassword]);
+
     return (
-        <Link href={file.url as Url} rel="noopener noreferrer" target="_blank">
-            <div className={styles.card}>
+        // <Link href={file.url as Url} rel="noopener noreferrer" target="_blank">
+        <>
+            <div
+                className={styles.card}
+                onClick={file.password === undefined ? openFile : verify}
+            >
                 <div className={styles.card__head}>
                     <div
                         className={styles.card__grid__1}
@@ -53,9 +80,26 @@ const FileCard: React.FC<FileCardProps> = ({
                             <p className={styles.card__desc}>{file.desc}</p>
                         )}
                     </div>
+                    {file.password !== undefined && (
+                        <div className={styles.card__grid__4}>
+                            <HiLockClosed />
+                        </div>
+                    )}
                 </div>
             </div>
-        </Link>
+            {showVerify && (
+                <Modal onClose={() => setShowVerify(false)}>
+                    <h4>password</h4>
+                    <input
+                        type="text"
+                        className={styles.card__input}
+                        value={textPassword}
+                        onChange={(e) => setTextPassword(e.target.value)}
+                    />
+                </Modal>
+            )}
+        </>
+        // </Link>
     );
 };
 

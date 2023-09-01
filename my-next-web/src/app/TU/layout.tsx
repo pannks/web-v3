@@ -11,10 +11,7 @@ export default function TULayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <FilesProvider>
-                <TasksProvider>
-                    <SectionBackLink />
-                    {children}
-                </TasksProvider>
+                <TasksProvider>{children}</TasksProvider>
             </FilesProvider>
         </>
     );
