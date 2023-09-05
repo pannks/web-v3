@@ -6,6 +6,8 @@ export const ThisSemSubjs = [
         desc: "",
         c: "var(--c-chip-16)",
         grid: "5/2/6/4",
+        liffId: "2000602897-gavRMpap",
+        accessRoles: ["admin"],
     },
     {
         subj: "JC208",
@@ -14,6 +16,8 @@ export const ThisSemSubjs = [
         desc: "",
         c: "var(--c-chip-3)",
         grid: "4/2/5/4",
+        liffId: "",
+        accessRoles: ["admin"],
     },
     {
         subj: "JC360",
@@ -22,6 +26,8 @@ export const ThisSemSubjs = [
         desc: "",
         c: "var(--c-chip-4)",
         grid: "3/5/4/7",
+        liffId: "2000602897-ApMd84B4",
+        accessRoles: ["admin"],
     },
 
     {
@@ -31,6 +37,8 @@ export const ThisSemSubjs = [
         desc: "",
         c: "var(--c-chip-7)",
         grid: "4/5/5/7",
+        liffId: "",
+        accessRoles: ["admin"],
     },
     {
         subj: "JC462",
@@ -39,6 +47,8 @@ export const ThisSemSubjs = [
         desc: "",
         c: "var(--c-chip-12)",
         grid: "3/2/4/4",
+        liffId: "",
+        accessRoles: ["admin"],
     },
     {
         subj: "JC463",
@@ -47,5 +57,7 @@ export const ThisSemSubjs = [
         desc: "",
         c: "var(--c-chip-14)",
         grid: "2/2/3/4",
+        liffId: "2000602897-96wMVZ6Z",
+        accessRoles: ["mb463", "admin"],
     },
 ];

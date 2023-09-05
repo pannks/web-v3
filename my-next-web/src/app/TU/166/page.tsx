@@ -62,6 +62,8 @@ const ThisSemPage = () => {
                                     key={file.id}
                                     file={file as File}
                                     showSubj={false}
+                                    showAuthor
+                                    showGroup
                                 />
                             ))}
                             {loadingFiles && <SkeletonLoading />}

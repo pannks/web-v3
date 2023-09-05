@@ -15,16 +15,26 @@
         max-width: 68rem;
     }
     &__head {
-        margin: 2rem 0;
+        margin: 2rem 0 0;
         font-family: var(--f-1);
         font-size: 1.4rem;
         font-weight: 500;
         max-width: 68rem;
     }
+    &__task {
+        display: flex;
+        margin-bottom: 1.6rem;
+        font-weight: 600;
+        color: var(--c-grey);
+        &__stt {
+            margin: 0 2rem 0 0;
+        }
+    }
     
 }
 
 .fold_grid {
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     gap: 0.6rem;
@@ -35,4 +45,38 @@
     color: var(--c-grey);
     text-align: center;
     font-family: var(--f-2);
+}
+
+.profile {
+    &__container {
+        background-color: #7aff2121;
+        padding: 2rem 4rem;
+        display: grid;
+        grid-template-columns: 6.4rem 1fr;
+        align-items: center;
+
+    }
+    &__img {
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        outline: 0.2rem solid var(--c-gb-white);
+    }
+
+    &__name {
+        font-family: var(--f-1), var(--f-3);
+        & > h1 {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        & > p {
+            font-size: 1.2rem;
+            font-family: var(--f-2);
+            
+        }
+    }
+}
+
+.error {
+    margin: 1.4rem 2rem;
 }

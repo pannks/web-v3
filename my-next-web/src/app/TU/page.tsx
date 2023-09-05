@@ -73,6 +73,7 @@ const TUPage = () => {
                                         key={file.id}
                                         file={file as File}
                                         bgSubj={subjInfo(file?.subj)?.c}
+                                        showAuthor
                                     />
                                 ))}
                         </div>

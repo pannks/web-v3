@@ -2,6 +2,7 @@ import styles from "./page.module.scss";
 import { Metadata } from "next";
 import { ThisSemSubjs } from "@/data/subjsData";
 import SubjPageView from "./SubjPageView";
+import Profileview from "./ProfileView";
 
 type SbjViewPageProps = {
     params: {
@@ -14,10 +15,14 @@ const SbjViewPage: React.FC<SbjViewPageProps> = ({ params }) => {
 
     return (
         <>
+            <Profileview liffId={subj?.liffId ?? ""} />
             <div className={styles.page}>
                 <h1 className={styles.page__title}>{subj?.subj}</h1>
                 <h2 className={styles.page__desc}>{subj?.name}</h2>
-                <SubjPageView slug={params.slug} />
+                <SubjPageView
+                    slug={params.slug}
+                    accessRoles={subj?.accessRoles}
+                />
             </div>
         </>
     );

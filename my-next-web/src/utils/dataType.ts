@@ -27,6 +27,8 @@ export type File = {
     createAt?: Timestamp;
     subj?: string;
     password?: string;
+    author?: string;
+    group?: string;
 };
 
 export type Task = {

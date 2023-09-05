@@ -113,6 +113,31 @@ export const loginApi = async (username: string, password: string) => {
     }
 };
 
+export const createUser = async (
+    username: string,
+    data: Record<string, any>
+) => {
+    const userDocRef = doc(db, "users", username);
+
+    const userSnapshot = await getDoc(userDocRef);
+
+    if (userSnapshot.exists()) {
+        return {
+            status: "failed",
+            error: "already existed",
+            user: userSnapshot.data(),
+        };
+    } else {
+        const createAt = new Date();
+        try {
+            await setDoc(userDocRef, { ...data, createAt });
+        } catch (err) {
+            return { status: "failed", error: err };
+        }
+        return { status: "success", user: userSnapshot.data() };
+    }
+};
+
 export const updateUserById = async (id: string, data: Record<string, any>) => {
     const userDocRef = doc(db, "users", id);
     // console.log(data);

@@ -10,19 +10,22 @@ import {
     getFileIcon,
 } from "@/utils/transform";
 import { File } from "@/utils/dataType";
-import { Url } from "next/dist/shared/lib/router/router";
 import Modal from "./Modal";
-import { HiLockClosed } from "react-icons/hi2";
+import { HiLockClosed, HiPencil, HiUserCircle } from "react-icons/hi2";
 
 type FileCardProps = {
     file: File;
     showSubj?: boolean;
+    showGroup?: boolean;
+    showAuthor?: boolean;
     bgSubj?: string;
 };
 
 const FileCard: React.FC<FileCardProps> = ({
     file,
     showSubj = true,
+    showGroup = false,
+    showAuthor = false,
     bgSubj = "var(--c-grey-200)",
 }) => {
     const [textPassword, setTextPassword] = useState("");
@@ -72,8 +75,24 @@ const FileCard: React.FC<FileCardProps> = ({
                                 {file.sem}{" "}
                             </span>
                         )}
-                        <h4 className={styles.card__name}>{file.name}</h4>
-                        {readTime && <p>{readTime}</p>}
+                        <h4 className={styles.card__name}>
+                            {showGroup && file?.group && (
+                                <span className={styles.card__group}>
+                                    {file?.group}
+                                </span>
+                            )}
+                            {file.name}
+                        </h4>
+                        {readTime && (
+                            <p className={styles.card__timeauthor}>
+                                {readTime}
+                                {showAuthor && file?.author && (
+                                    <span>
+                                        <HiUserCircle /> {file?.author}
+                                    </span>
+                                )}
+                            </p>
+                        )}
                     </div>
                     <div className={styles.card__grid__3}>
                         {file.desc !== "" && (

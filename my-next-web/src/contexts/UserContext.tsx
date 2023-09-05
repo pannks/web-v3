@@ -2,9 +2,13 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-type User = {
+export type User = {
     username: string;
     role: string;
+    id?: string;
+    name?: string;
+    img?: string;
+    status_msg?: string;
 };
 
 type UserContextValue = {
