@@ -3,25 +3,42 @@
     top: -3rem;
     padding: 8rem 4rem 3rem;
     &__desc {
+        grid-column: 2/3;
         font-size: 1.4rem;
         font-family: var(--f-3);
         font-weight: 400;
         max-width: 68rem;
+    }
+    &__header {
+        font-family: var(--f-1);
+        display: grid;
+        grid-template-columns: 5.2rem 1fr;
         margin-bottom: 4rem;
+
+        & > span  {
+            grid-row: 1/3;
+            display: flex;
+            width: 4rem;
+            align-items: center;
+            justify-content: center;
+            margin-right: 2rem;
+            font-size: 2.4rem;
+            background-color: var(--c-grey-100);
+            border-radius: 0.8rem;
+        }
     }
     &__title {
-        font-family: var(--f-1);
-        font-size: 1.8rem;
-        max-width: 68rem;
+        font-size: 1.4rem;
+        grid-column: 2/3;
     }
     &__head {
-        margin: 2rem 0 0;
         font-family: var(--f-1);
         font-size: 1.4rem;
         font-weight: 500;
         max-width: 68rem;
     }
     &__task {
+        font-family: var(--f-1);
         display: flex;
         margin-bottom: 1.6rem;
         font-weight: 600;
@@ -30,10 +47,23 @@
             margin: 0 2rem 0 0;
         }
     }
+    &__pending {
+        margin-top: 2rem;
+        background-color: var(--c-bg-progress);
+        padding: 2rem;
+        font-family: var(--f-3);
+    }
+    &__error {
+        margin-top: 2rem;
+        background-color: var(--c-bg-cancel);
+        padding: 2rem;
+        font-family: var(--f-3);
+    }
     
 }
 
 .fold_grid {
+    font-family: var(--f-1), var(--f-3);
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
@@ -49,16 +79,23 @@
 
 .profile {
     &__container {
-        background-color: #7aff2121;
+        background-color: var(--c-grey-100);
         padding: 2rem 4rem;
         display: grid;
-        grid-template-columns: 6.4rem 1fr;
+        grid-template-columns: 4.2rem 1fr;
         align-items: center;
-
+        &__loading {
+            padding: 0.2rem 0;
+            display: block;
+            align-items: center;
+            background-color: var(--c-chip-13);
+            animation: loading 2s infinite;
+        }
     }
+
     &__img {
-        width: 4.8rem;
-        height: 4.8rem;
+        width: 2.4rem;
+        height: 2.4rem;
         border-radius: 50%;
         outline: 0.2rem solid var(--c-gb-white);
     }
@@ -77,6 +114,12 @@
     }
 }
 
-.error {
-    margin: 1.4rem 2rem;
+
+@keyframes loading {
+    0% {
+        background-color: var(--c-chip-8);
+    }
+    100% {
+        background-color: var(--c-grey-100);
+    }
 }

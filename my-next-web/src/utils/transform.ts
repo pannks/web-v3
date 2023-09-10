@@ -25,19 +25,19 @@ export function formatLocalTime(time: Date) {
 export function getFileIcon(fileType: string) {
     switch (fileType) {
         case "doc":
-            return { i: BsFillFileEarmarkTextFill, c: "#A7EDE7" };
+            return { i: BsFillFileEarmarkTextFill, c: "#12c2e9" };
         case "xls":
-            return { i: BsFillFileEarmarkSpreadsheetFill, c: "#A8DF8E" };
+            return { i: BsFillFileEarmarkSpreadsheetFill, c: "#59C173" };
         case "canva":
-            return { i: SiCanva, c: "#FFBDF7" };
+            return { i: SiCanva, c: "#ec38bc" };
         case "pdf":
-            return { i: BsFillFileEarmarkPdfFill, c: "#FF6969" };
+            return { i: BsFillFileEarmarkPdfFill, c: "#EF3B36" };
         case "vdo":
             return { i: BsFillFileEarmarkPlayFill, c: "#FD8D14" };
         case "drive":
             return { i: SiGoogledrive, c: "#FFE17B" };
         case "web":
-            return { i: BsGlobeAmericas, c: "#CDE990" };
+            return { i: BsGlobeAmericas, c: "#06beb6" };
         default:
             return { i: BsFillFileEarmarkFill, c: "#c5c5c5" };
     }

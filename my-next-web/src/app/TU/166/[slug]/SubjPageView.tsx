@@ -9,6 +9,8 @@ import TaskCard from "@/components/TaskCard";
 import FileCard from "@/components/FileCard";
 import { File, Task } from "@/utils/dataType";
 import { useUser } from "@/contexts/UserContext";
+import AddFileForm from "../../manage/AddFileForm";
+import Badge from "@/components/Badge";
 
 type SubjPageViewProps = {
     slug: string;
@@ -31,16 +33,32 @@ const SubjPageView: React.FC<SubjPageViewProps> = ({
         return Boolean(a.filter((x) => accessRoles.includes(x)).length !== 0);
     };
 
+    if (!getUser?.role && !loading) {
+        return (
+            <div className={styles.page__head}>
+                status: <Badge bg={"var(--c-chip-15)"}>Pending...</Badge>
+                <div className={styles.page__pending}>
+                    <p>ยินดีต้อนรับสมาชิกใหม่</p>
+                    <br />
+                    <p>
+                        โปรดรอแอดมินพัช มอบตำแหน่งให้คุณสักครู่
+                        เพื่อที่คุณจะได้สามารถเข้าถึงระบบไฟล์นี้ได้
+                    </p>
+                </div>
+            </div>
+        );
+    }
     if (!canAccessRole(getUser?.role ?? "", accessRoles) && !loading) {
         return (
-            <p className={styles.page__head}>
-                Unauthorized (403)
-                <ul className={styles.error}>
-                    <li>คุณไม่ได้รับอนุญาตให้เข้า</li>
-                    <li>บทบาทของคุณไม่มีสิทธิ์การเข้าถึง</li>
-                    <li>คุณยังไม่ได้รับการยืนยันจากแอดมิน</li>
-                </ul>
-            </p>
+            <div className={styles.page__head}>
+                status: <Badge bg={"var(--c-chip-1)"}>Unauthorized (403)</Badge>
+                <div className={styles.page__error}>
+                    <p>
+                        คุณไม่ได้รับอนุญาตให้เข้า <br />
+                        หรือ บทบาทของคุณไม่มีสิทธิ์การเข้าถึง <br />
+                    </p>
+                </div>
+            </div>
         );
     }
 
@@ -73,6 +91,7 @@ const SubjPageView: React.FC<SubjPageViewProps> = ({
                     </p>
                 )}
             </div>
+            <br />
             <p className={styles.page__head}>Files ({fileList?.length})</p>
             {loadingFiles && <SkeletonLoading />}
             <div className={styles.fold_grid}>

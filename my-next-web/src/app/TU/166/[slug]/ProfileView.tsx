@@ -6,6 +6,7 @@ import liff from "@line/liff";
 import { User, useUser } from "@/contexts/UserContext";
 import { createUser } from "@/utils/firebase";
 import Spinner from "@/components/Spinner";
+import SkeletonLoading from "@/components/SkeletonLoading";
 
 type ProfileviewProps = { liffId: string };
 
@@ -63,26 +64,24 @@ const Profileview: React.FC<ProfileviewProps> = ({ liffId }) => {
     }, []);
 
     return (
-        <div className={styles.profile__container}>
-            {(loading || !getUser?.name) && <Spinner />}
+        <>
+            {(loading || !getUser?.name) && (
+                <div className={styles.profile__container__loading}></div>
+            )}
             {!loading && (
-                <>
+                <div className={styles.profile__container}>
                     <img
                         className={styles.profile__img}
                         src={getUser?.img}
                         alt="profile_line"
                     />
                     <div className={styles.profile__name}>
-                        <h1>Welcome {getUser?.username}</h1>
-                        {!getUser?.role ? (
-                            <p> สมาชิกภายนอก</p>
-                        ) : (
-                            <p>{getUser?.role}</p>
-                        )}
+                        <h1>สวัสดีคุณ {getUser?.username}</h1>
+                        {!getUser?.role && <p> สมาชิกภายนอก</p>}
                     </div>
-                </>
+                </div>
             )}
-        </div>
+        </>
     );
 };
 
