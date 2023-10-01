@@ -4,11 +4,14 @@ import styles from "./page.module.scss";
 import TriangleCalculator from "./TriangleCalculator";
 import CostRelatedCalculator from "./CostRelatedCalculator";
 import SectionBackLink from "@/components/SectionBackLink";
+import MetricCard from "./MetricCard";
+import { metrics } from "./metricData";
 
 type MediaPlannerPageProps = {};
 
 const MediaPlannerPage: React.FC<MediaPlannerPageProps> = ({}) => {
     const [globalCost, setGlobalCost] = useState<number>(10000);
+    const [currentTab, setCurrentTab] = useState("all");
 
     return (
         <>
@@ -16,7 +19,7 @@ const MediaPlannerPage: React.FC<MediaPlannerPageProps> = ({}) => {
             <div className={styles.mp_page}>
                 <h1>Media Planner Calculator</h1>
                 <br />
-                <div className={styles.mp_page__card__main}>
+                <div className={styles.mp_page__card}>
                     <label>
                         Cost:
                         <input
@@ -29,91 +32,59 @@ const MediaPlannerPage: React.FC<MediaPlannerPageProps> = ({}) => {
                     </label>
                 </div>
                 <br />
+                <div className={styles.mp_page__tabs}>
+                    <button
+                        className={`${
+                            currentTab === "all" && styles.mp_page__tabs__active
+                        }`}
+                        onClick={() => setCurrentTab("all")}
+                    >
+                        All
+                    </button>
+                    <button
+                        className={`${
+                            currentTab === "digital" &&
+                            styles.mp_page__tabs__active
+                        }`}
+                        onClick={() => setCurrentTab("digital")}
+                    >
+                        Digital
+                    </button>
+                    <button
+                        className={`${
+                            currentTab === "tv" && styles.mp_page__tabs__active
+                        }`}
+                        onClick={() => setCurrentTab("tv")}
+                    >
+                        TV
+                    </button>
+                    <button
+                        className={`${
+                            currentTab === "ooh" && styles.mp_page__tabs__active
+                        }`}
+                        onClick={() => setCurrentTab("ooh")}
+                    >
+                        Out Of Home
+                    </button>
+                </div>
                 <section className={styles.mp_page__grid}>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>
-                            Cost Per Miles (1k Impressions){" "}
-                        </h3>
-                        <CostRelatedCalculator
-                            labelA="Impressions"
-                            labelC="CPM"
-                            globalCost={globalCost ?? 0}
-                            computeA={(b, c) => b / (c / 1000)}
-                            computeC={(a, b) => b / (a / 1000)}
-                        />
-                    </div>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>Cost Per Click </h3>
-                        <CostRelatedCalculator
-                            labelA="Clicks"
-                            labelC="CPC"
-                            globalCost={globalCost ?? 0}
-                            computeA={(b, c) => b / c}
-                            computeC={(a, b) => b / a}
-                        />
-                    </div>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>Cost Per Lead </h3>
-                        <CostRelatedCalculator
-                            labelA="Conversions"
-                            labelC="CPR"
-                            globalCost={globalCost ?? 0}
-                            computeA={(b, c) => b / c}
-                            computeC={(a, b) => b / a}
-                        />
-                    </div>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>
-                            Reach and Frequency
-                        </h3>
-                        <TriangleCalculator
-                            labelA="Impressions"
-                            labelB="Reach"
-                            labelC="Frequency"
-                            computeA={(b, c) => b * c}
-                            computeB={(a, c) => a / c}
-                            computeC={(a, b) => a / b}
-                        />
-                    </div>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>
-                            Conversion Rate (CVR)
-                        </h3>
-                        <TriangleCalculator
-                            labelA="Conversions"
-                            labelB="Clicks"
-                            labelC="CVR (%)"
-                            computeA={(b, c) => (c * b) / 100}
-                            computeB={(a, c) => a / (c / 100)}
-                            computeC={(a, b) => (a / b) * 100}
-                        />
-                    </div>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>
-                            Click-Through Rate (CTR)
-                        </h3>
-                        <TriangleCalculator
-                            labelA="Clicks"
-                            labelB="Impressions"
-                            labelC="CTR (%)"
-                            computeA={(b, c) => (c * b) / 100}
-                            computeB={(a, c) => a / (c / 100)}
-                            computeC={(a, b) => (a / b) * 100}
-                        />
-                    </div>
-                    <div className={styles.mp_page__card}>
-                        <h3 className={styles.section_cal}>
-                            Gross Rating Points (GRPs)
-                        </h3>
-                        <TriangleCalculator
-                            labelA="Reach (%)"
-                            labelB="Frequency"
-                            labelC="GRPs"
-                            computeA={(b, c) => c / b}
-                            computeB={(a, c) => c / a}
-                            computeC={(a, b) => a * b}
-                        />
-                    </div>
+                    {metrics
+                        .filter((metric) => {
+                            if (currentTab === "all") return true;
+                            return metric.category.includes(currentTab);
+                        })
+                        .map((metric) => (
+                            <MetricCard
+                                key={metric.name}
+                                name={metric.name}
+                                labelArr={metric.labelArr}
+                                computeArr={metric.computeArr}
+                                globalCost={
+                                    metric.use_cost ? globalCost : undefined
+                                }
+                                categoryArr={metric.category}
+                            />
+                        ))}
                 </section>
             </div>
         </>

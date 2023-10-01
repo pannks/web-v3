@@ -1,0 +1,38 @@
+.card {
+    min-width: 34rem;
+    background-color: var(--c-grey-100);
+    padding: 2rem 2rem;
+    border-radius: 0.6rem;
+    transition: all 0.1s ease-in;
+    &:hover {
+        box-shadow: #2525251e 0px 1px 8px;
+    
+    }
+    &__main {
+        padding: 2rem 2rem;
+        border-radius: 0.6rem;
+        background-color: var(--c-bg-todo);
+        margin-bottom: 2rem;
+    }
+    &__header {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__txt {
+            font-size: 1.4rem;
+        }
+        &__ico {
+            display: flex;
+            gap: 0.6rem;
+            & > svg {
+                width:  2.0rem;
+                height: 2.0rem;
+                background-color: var(--c-grey-200);
+                border-radius: 50%;
+                padding: 0.4rem;
+            }
+        
+        }
+    }
+}
