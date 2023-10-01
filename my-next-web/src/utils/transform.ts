@@ -12,6 +12,12 @@ import {
     BsRecordCircle,
     BsXCircle,
 } from "react-icons/bs";
+import {
+    HiOutlineDocumentText,
+    HiOutlineGlobeEuropeAfrica,
+    HiOutlinePresentationChartLine,
+    HiOutlineTableCells,
+} from "react-icons/hi2";
 import { SiCanva, SiGoogledrive } from "react-icons/si";
 
 export function convertFbTimeToDate(timestamp: Timestamp) {
@@ -25,11 +31,11 @@ export function formatLocalTime(time: Date) {
 export function getFileIcon(fileType: string) {
     switch (fileType) {
         case "doc":
-            return { i: BsFillFileEarmarkTextFill, c: "#12c2e9" };
+            return { i: HiOutlineDocumentText, c: "#5aa6ed" };
         case "xls":
-            return { i: BsFillFileEarmarkSpreadsheetFill, c: "#59C173" };
+            return { i: HiOutlineTableCells, c: "#8ee665" };
         case "canva":
-            return { i: SiCanva, c: "#ec38bc" };
+            return { i: HiOutlinePresentationChartLine, c: "#cb60e0" };
         case "pdf":
             return { i: BsFillFileEarmarkPdfFill, c: "#EF3B36" };
         case "vdo":
@@ -37,7 +43,7 @@ export function getFileIcon(fileType: string) {
         case "drive":
             return { i: SiGoogledrive, c: "#FFE17B" };
         case "web":
-            return { i: BsGlobeAmericas, c: "#06beb6" };
+            return { i: HiOutlineGlobeEuropeAfrica, c: "#96e0d4" };
         default:
             return { i: BsFillFileEarmarkFill, c: "#c5c5c5" };
     }

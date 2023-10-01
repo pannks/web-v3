@@ -7,6 +7,7 @@ import {
     HiOutlineCurrencyDollar,
     HiOutlineIdentification,
     HiOutlinePresentationChartLine,
+    HiOutlineTv,
 } from "react-icons/hi2";
 import Link from "next/link";
 import SectionBackLink from "@/components/SectionBackLink";
@@ -18,6 +19,12 @@ const JsProjectsPage = () => {
             <div className={styles.section__1}>
                 <h4 className={styles.heading}>Javascript Projects</h4>
                 <div className={styles.row}>
+                    <JsProjCard
+                        icon={<HiOutlineTv />}
+                        name={"Media Planner Calculator"}
+                        desc={"คำนวณค่าที่เกี่ยวข้องกับการวางแผนสื่อ"}
+                        href={"./media-planner/"}
+                    />
                     <JsProjCard
                         icon={<HiOutlineCurrencyDollar />}
                         name={"MK201 Price Calculation"}

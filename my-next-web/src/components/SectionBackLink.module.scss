@@ -5,9 +5,14 @@
     position: relative;
     z-index: 800;
     & > a {
+        display: inline-flex;
+        transition: all 0.1s ease;
+        padding: 0.6rem 1.2rem;
+        align-items: center;
+        border-radius: 0.6rem;
+        gap: 0.6rem;
         &:hover {
-            background-color: var(--c-primary);
-            color: var(--c-white);
+           background-color: var(--c-grey-100);
         }
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SectionBackLink.module.scss";
-import { HiChevronLeft } from "react-icons/hi2";
+import { HiChevronLeft, HiMiniArrowLeft } from "react-icons/hi2";
 import Link from "next/link";
 import { Url } from "next/dist/shared/lib/router/router";
 
@@ -16,7 +16,7 @@ const SectionBackLink: React.FC<SectionBackLinkProps> = ({
     return (
         <section className={styles.back}>
             <Link href={href}>
-                <HiChevronLeft /> {text}
+                <HiMiniArrowLeft /> {text}
             </Link>
         </section>
     );

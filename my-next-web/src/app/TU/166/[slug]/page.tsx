@@ -16,16 +16,8 @@ const SbjViewPage: React.FC<SbjViewPageProps> = ({ params }) => {
 
     return (
         <>
-            <Profileview liffId={subj?.liffId ?? ""} />
+            <Profileview liffId={subj?.liffId ?? ""} />{" "}
             <div className={styles.page}>
-                <div className={styles.page__header}>
-                    <span>
-                        <HiMiniReceiptPercent />
-                    </span>
-                    <h1 className={styles.page__head}>{subj?.subj}</h1>
-                    <h2 className={styles.page__desc}>{subj?.name}</h2>
-                    <p className={styles.page__desc}>ห้องเรียน: {subj?.room}</p>
-                </div>
                 <SubjPageView
                     slug={params.slug}
                     accessRoles={subj?.accessRoles}

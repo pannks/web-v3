@@ -38,7 +38,7 @@ const FileCard: React.FC<FileCardProps> = ({
     }
 
     const openFile = () => {
-        window.open(file.url, "_blank", "rel=noopener noreferrer");
+        window.open(file.url, "_blank", "noopener noreferrer");
         setTextPassword("");
         setShowVerify(false);
     };

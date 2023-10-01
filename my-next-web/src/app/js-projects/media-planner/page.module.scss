@@ -1,0 +1,69 @@
+.mp_page {
+    padding: 4rem 10vw 2rem;
+    font-family: var(--f-1);
+    & h3 {
+        color: var(--c-secondary);
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    & label {
+        font-size: 1.2rem;
+        display: grid;
+        grid-template-columns: 12rem 1fr;
+        max-width: 20rem;
+        align-items: center;
+        margin-bottom: 0.2rem;
+        & > div {
+            display: flex;
+        }
+    }
+
+    & input {
+        color: var(--c-black);
+        background-color: var(--c-white);
+        padding: 0.6rem;
+        border-radius: 0.6rem;
+        border: 0.1rem solid var(--c-grey-200);
+        margin: 0 0.2rem;
+        max-width: 14rem;
+        &:focus {
+            color: var(--c-secondary);
+        }
+    }
+
+    & button{
+        border: none;
+        border-radius: 0.4rem;
+        padding: 0.2rem 0.6rem;
+        transition: all 0.1s ease;
+        color: var(--c-grey-700);
+        &:hover {
+            background-color: var(--c-grey);
+        }
+    }
+
+    &__card {
+        min-width: 34rem;
+        background-color: var(--c-grey-100);
+        padding: 2rem 2rem;
+        border-radius: 0.6rem;
+        transition: all 0.1s ease-in;
+        &:hover {
+            box-shadow: #2525251e 0px 1px 8px;
+        
+        }
+        &__main {
+            padding: 2rem 2rem;
+            border-radius: 0.6rem;
+            background-color: var(--c-bg-todo);
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+        gap: 2rem;
+    }
+}

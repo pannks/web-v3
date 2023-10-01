@@ -15,7 +15,7 @@
     
     --c-primary-sh: #46464638;
 
-    --c-secondary: #50c8d8;
+    --c-secondary: #44c22b;
     --c-secondary-light: #eaf5f8;
 
     --c-selection: #ffe552;
@@ -75,7 +75,7 @@
     
     --c-primary-sh: #00000075;
     
-    --c-secondary: #3da8c9;
+    --c-secondary: #8ff17c;
     --c-secondary-light: #251e21;
     
     --c-selection: #e09e2d;
@@ -315,6 +315,9 @@ span.spinner {
 
 }
 
+button.lock__active {
+  background-color: var(--c-secondary);
+}
 
 
 @keyframes rotation {
