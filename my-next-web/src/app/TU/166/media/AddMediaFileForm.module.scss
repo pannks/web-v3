@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--f-3);
+    background-color: var(--c-white);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    border: 0.1rem solid var(--c-grey-100);
+
+    & > input, select {
+        padding: 0.6rem 1.2rem;
+        background-color: var(--c-grey-100);
+        border: none;
+        border-radius: 0.6rem;
+        color: var(--c-black);
+        margin-bottom: 0.6rem;
+    }
+    & > label {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+    }
+   
+    &__btn {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.6rem;
+        & > button {
+            cursor: pointer;
+            padding: 0.6rem 1.2rem;
+            font-family: var(--f-1);
+            border-radius: 0.6rem;
+        }
+        &__reset { 
+            border: 0.1rem solid var(--c-black);
+            background-color: transparent;
+            color: var(--c-black);
+        }
+        &__add {
+            border: none;
+            background-color: var(--c-primary);
+        
+        }
+    }
+}
+
+.head {
+    font-size: 1.6rem;
+    font-family: var(--f-1), var(--f-3);
+}
