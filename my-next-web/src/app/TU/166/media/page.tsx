@@ -13,6 +13,7 @@ import { File } from "@/utils/dataType";
 import { deleteFileById } from "@/utils/firebase";
 import DeleteFileForm from "../../manage/DeleteFileForm";
 import EditFileForm from "../../manage/EditfileForm";
+import { Metadata } from "next";
 
 type MediaPlanPageProps = {};
 
@@ -120,12 +121,14 @@ const MediaPlanPage: React.FC<MediaPlanPageProps> = ({}) => {
     );
 };
 
-export function generateMetadata() {
-    return {
-        title: `รวมไฟล์ 463 จะเยอะไปไหน`,
-        description:
-            "เพื่อผองเพื่อนพวกพ้องและน้องพี่ ต้องเลื่อนไฟล์เปิดทียากไฉน จบปัญหาทุกข์ยากเหล่านี้ไป พบไฟล์ไวเพราะรวมไว้ที่ Pann's Website",
-    };
-}
+export const metadata: Metadata = {
+    title: "รวมไฟล์ 463 จะเยอะไปไหน",
+    description:
+        "เพื่อผองเพื่อนพวกพ้องและน้องพี่ ต้องเลื่อนไฟล์เปิดทียากไฉน จบปัญหาทุกข์ยากเหล่านี้ไป พบไฟล์ไวเพราะรวมไว้ที่ Pann's Website",
+    themeColor: [
+        { media: "(prefers-color-scheme: dark)", color: "#161b1f" },
+        { media: "(prefers-color-scheme: light)", color: "#f0c63f" },
+    ],
+};
 
 export default MediaPlanPage;
