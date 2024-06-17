@@ -1,6 +1,6 @@
 .section {
     &__1 {
-        padding: 4rem 10vw ;
+        padding: 4rem 10vw;
     }
 }
 
@@ -11,8 +11,7 @@
 }
 
 .card__wrap {
-    max-width: 90rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-    gap: 3rem ;
+    grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+    gap: 3.2rem;
 }

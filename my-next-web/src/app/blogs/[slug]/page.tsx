@@ -28,6 +28,7 @@ const BlogPage: React.FC<BlogPageProps> = async ({ params }) => {
         mdxOptions: {
             remarkPlugins: [remarkGfm],
             rehypePlugins: [rehypeHighlight],
+            remarkRehypeOptions: { footnoteLabel: 'References' },
         },
     };
 
