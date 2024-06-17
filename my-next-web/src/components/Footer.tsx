@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Footer.module.scss";
-import Link from "next/link";
-import { SiGithub, SiYoutube, SiInstagram } from "react-icons/si";
+import React from 'react';
+import styles from './Footer.module.scss';
+import Link from 'next/link';
+import { SiGithub, SiYoutube, SiInstagram } from 'react-icons/si';
 
 const Footer = () => {
     return (
@@ -17,7 +17,8 @@ const Footer = () => {
                     <SiInstagram size={18} />
                 </Link>
             </div>
-            <p>Pann Kaansadich &copy; 2023</p>
+            <p>v.3.2.0 | Created By Next.JS 13.4 </p>
+            <p>Pann Kaansadich &copy; 2024 </p>
         </footer>
     );
 };

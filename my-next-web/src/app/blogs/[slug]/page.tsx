@@ -1,13 +1,13 @@
-import { getAllPosts, getPostBySlug } from "../PostApi";
-import { compileMDX } from "next-mdx-remote/rsc";
-import styles from "./page.module.scss";
+import { getAllPosts, getPostBySlug } from '../PostApi';
+import { compileMDX } from 'next-mdx-remote/rsc';
+import styles from './page.module.scss';
 
-import rehypeHighlight from "rehype-highlight/lib";
-import remarkGfm from "remark-gfm";
-import OtherPosts from "@/components/OtherPosts";
-import { HiChevronLeft } from "react-icons/hi2";
-import Link from "next/link";
-import { Metadata } from "next";
+import rehypeHighlight from 'rehype-highlight/lib';
+import remarkGfm from 'remark-gfm';
+import OtherPosts from '@/components/OtherPosts';
+import { HiChevronLeft } from 'react-icons/hi2';
+import Link from 'next/link';
+import { Metadata } from 'next';
 
 type BlogPageProps = {
     params: {
@@ -16,13 +16,13 @@ type BlogPageProps = {
 };
 
 const BlogPage: React.FC<BlogPageProps> = async ({ params }) => {
-    const allPosts = getAllPosts(["slug", "title", "desc"]);
+    const allPosts = getAllPosts(['slug', 'title', 'desc']);
     const post = getPostBySlug(params.slug, [
-        "title",
-        "desc",
-        "date",
-        "slug",
-        "content",
+        'title',
+        'desc',
+        'date',
+        'slug',
+        'content',
     ]);
     const options = {
         mdxOptions: {
@@ -41,7 +41,7 @@ const BlogPage: React.FC<BlogPageProps> = async ({ params }) => {
     return (
         <>
             <div className={styles.header}>
-                <Link href={"/blogs"}>
+                <Link href={'/blogs'}>
                     <HiChevronLeft /> All Blogs
                 </Link>
             </div>
@@ -59,10 +59,10 @@ export async function generateMetadata({
     params,
 }: BlogPageProps): Promise<Metadata> {
     const post = getPostBySlug(params.slug, [
-        "title",
-        "desc",
-        "slug",
-        "coverImage",
+        'title',
+        'desc',
+        'slug',
+        'coverImage',
     ]);
 
     return {
@@ -72,7 +72,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-    const posts = getAllPosts(["slug"]);
+    const posts = getAllPosts(['slug']);
 
     return posts.map((post) => ({
         slug: post.slug,

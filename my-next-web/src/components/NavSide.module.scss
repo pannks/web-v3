@@ -19,11 +19,15 @@
         padding: 1rem 2.8rem;
         transition: all 300ms ease;
         &:hover {
-            background-color: var(--c-primary);
+            background-image: linear-gradient(
+                43deg,
+                #4158d0 0%,
+                #c850c0 46%,
+                #ffcc70 100%
+            );
             transform: translateY(-0.8rem);
         }
     }
-
 }
 
 @keyframes fade-slide {
@@ -34,5 +38,5 @@
     100% {
         opacity: 0.8;
         transform: translate(8rem, -3rem);
-}
+    }
 }

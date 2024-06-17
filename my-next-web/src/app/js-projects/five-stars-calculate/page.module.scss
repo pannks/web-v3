@@ -1,0 +1,104 @@
+.page {
+    padding: 4rem 3.2rem;
+    font-size: 1.4rem;
+    font-family: var(--f-1), var(--f-3);
+    background-image: linear-gradient(130deg, #01d5ff23 0%, var(--c-white) 70%);
+    min-height: 90vh;
+    display: flex;
+    @media (max-width: 48rem) {
+        display: block;
+    }
+    & section {
+        width: 100%;
+        &:nth-child(1) {
+            min-width: 30rem;
+        }
+    }
+    & h1 {
+        font-weight: 700;
+        font-size: 2.4rem;
+    }
+    & h3 {
+        margin: 2rem 0;
+        background-color: var(--c-chip-100-9);
+        padding: 0.4rem 1rem;
+        border-radius: 0.8rem;
+        display: inline-block;
+    }
+    & table {
+        width: 100%;
+        height: inherit;
+        thead {
+            border-bottom: 1px solid var(--c-grey);
+            background-color: var(--c-grey-200);
+        }
+        td {
+            background-color: var(--c-white);
+            padding: 0.8rem 1rem;
+            & span.tobe {
+                display: block;
+                color: var(--c-grey);
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+.flex_stars {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.1rem;
+    & > *:nth-child(1) {
+        min-width: 8rem;
+    }
+    & input {
+        max-width: 12rem;
+    }
+    & .weight {
+        color: var(--c-grey);
+    }
+}
+.score_card {
+    font-family: var(--f-1);
+    display: flex;
+    padding: 2rem;
+    gap: 3.6rem;
+    align-items: center;
+    &_sum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        & h4 {
+            font-size: 2.4rem;
+            margin-bottom: 0.6rem;
+        }
+        & span {
+            color: var(--c-grey-700);
+        }
+    }
+    & svg {
+        fill: var(--c-chip-14);
+    }
+
+    &_graph {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 16rem;
+        gap: 1rem;
+        .progress {
+            border-radius: 0.6rem;
+            height: 1rem;
+            background-color: var(--c-chip-8);
+        }
+    }
+    @media (max-width: 40rem) {
+        flex-direction: column;
+        &_graph {
+            max-width: 30rem;
+            min-width: 22rem;
+            padding: 0 4rem;
+        }
+    }
+}

@@ -1,0 +1,143 @@
+.page {
+    padding: 4rem 2rem;
+    font-family: var(--f-3);
+    min-height: 85vh;
+    & h1 {
+        margin-bottom: 2rem;
+    }
+    &__flex {
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+        @media (max-width: 54rem) {
+            display: block;
+            & > div {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    &__interact {
+        max-width: 100rem;
+        background-color: var(--c-chip-100-6);
+        border: 1px solid var(--c-chip-6);
+        border-radius: 0.8rem;
+        box-shadow: rgba(149, 157, 165, 0.13) 0px 8px 24px;
+    }
+    &__result {
+        padding: 1rem;
+        background-color: var(--c-chip-100-8);
+        border: 1px solid var(--c-chip-8);
+        border-radius: 0.8rem;
+        box-shadow: rgba(149, 157, 165, 0.13) 0px 8px 24px;
+    }
+    & h2 {
+        margin-top: 1rem;
+        display: inline-flex;
+    }
+
+    table {
+        overflow: auto;
+        border: 1px solid var(--c-grey-200);
+        height: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        text-align: left;
+        color: var(--c-black);
+
+        & th {
+            border: 1px solid var(--c-grey-200);
+            background-color: var(--c-grey-200);
+            padding: 0.8rem 0.4rem;
+            font-size: 1.2rem;
+            width: max-content;
+        }
+        & tr {
+            &.trsummary {
+                font-weight: 600;
+                font-size: 1.2rem;
+                & > td {
+                    border-top: 2px solid var(--c-grey);
+                    padding: 0.8rem 0.4rem;
+                }
+            }
+        }
+
+        & td {
+            border: 1px solid var(--c-grey-200);
+            background-color: var(--c-white);
+            width: min-content;
+
+            & input {
+                background-color: var(--c-white);
+                padding: 0.8rem 0.4rem;
+                border: none;
+                width: 100%;
+                color: var(--c-black);
+                font-size: 1.2rem;
+            }
+
+            & button {
+                position: relative;
+                background-color: var(--c-white);
+                color: var(--c-black);
+                padding: 0.8rem 0.4rem;
+                border: none;
+                width: 3rem;
+                cursor: pointer;
+                font-weight: 200;
+                font-size: 1.4rem;
+                &.danger {
+                    background-color: rgba(255, 0, 0, 0.135);
+                    color: red;
+                }
+                &.add {
+                    background-color: var(--c-chip-100-10);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.cards {
+    display: inline-flex;
+    gap: 3rem;
+    padding: 2rem;
+    & h2 {
+        display: block;
+        min-width: max-content;
+    }
+    & table {
+        overflow: hidden;
+        border-radius: 0.8rem;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-bottom: 2rem;
+    }
+    @media (max-width: 36rem) {
+        display: block;
+        padding: 0 2rem;
+    }
+}
+.table_result {
+    & td {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        max-width: max-content;
+        &:nth-child(1) {
+            background-color: var(--c-grey-200);
+            font-weight: 600;
+            min-width: 12rem;
+        }
+        &:nth-child(2) {
+            font-weight: 600;
+            max-width: 14rem;
+            font-size: 1.4rem;
+        }
+    }
+    & tr {
+        &:nth-child(2n) td:not(:nth-child(1)) {
+            background-color: var(--c-grey-100);
+        }
+    }
+}

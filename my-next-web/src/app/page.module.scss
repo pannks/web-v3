@@ -9,9 +9,9 @@
         position: relative;
         padding: 20vh calc(10vw + 2rem) 10vh;
         min-height: 70vh;
-        background-color:  var(--c-white);
+        background-color: var(--c-white);
         & > h1 {
-            font-size: 3.0rem;
+            font-size: 3rem;
             width: 30rem;
             font-weight: 300;
             font-family: var(--f-1);
@@ -19,18 +19,26 @@
             & > span {
                 display: block;
                 font-weight: 600;
-                background-image: 
-                linear-gradient(to left, #40cbf5,#75df1f,#fdbb2d); 
+                background-image: linear-gradient(
+                    to left,
+                    #40cbf5,
+                    #75df1f,
+                    #fdbb2d
+                );
                 background-clip: text;
-                -webkit-text-fill-color: transparent;  
-            
+                -webkit-text-fill-color: transparent;
             }
         }
         & > p {
+            display: block;
+            width: max-content;
             font-size: 1.3rem;
             font-family: var(--f-2);
             margin-bottom: 2rem;
             font-style: italic;
+            &:hover {
+                background-color: var(--c-chip-1);
+            }
         }
         &__img {
             position: absolute;
@@ -41,45 +49,51 @@
             max-height: 66vh;
             bottom: 0;
             overflow: hidden;
-            & >img {
-                animation: 1s ease fadeInRight ;
+            & > img {
+                animation: 1s ease fadeInRight;
                 position: relative;
                 height: 100%;
                 object-fit: contain;
-                object-position: bottom right;     
+                object-position: bottom right;
             }
         }
     }
     &__2 {
-        background: var(--c-primary-light);  
-        background: -webkit-linear-gradient(to right, var(--c-primary-light-2), var(--c-primary-light));  
-        background: linear-gradient(to right, var(--c-primary-light-2), var(--c-primary-light)); 
+        background: var(--c-primary-light);
+        background: -webkit-linear-gradient(
+            to right,
+            var(--c-primary-light-2),
+            var(--c-primary-light)
+        );
+        background: linear-gradient(
+            to right,
+            var(--c-primary-light-2),
+            var(--c-primary-light)
+        );
 
         color: var(--c-black);
-        padding: 6rem 10vw ;
+        padding: 6rem 10vw;
         & > h2 {
-           @include section_header();
+            @include section_header();
         }
         & > p {
             margin: 0 0 3rem;
             font-size: 1.6rem;
             font-family: var(--f-2);
         }
-
     }
     &__3 {
-        padding: 4rem 10vw ;
+        padding: 4rem 10vw;
         & > h2 {
             @include section_header();
         }
         & > p {
             margin: 0 0 2rem;
         }
-
     }
     &__4 {
         background-color: var(--c-secondary-light);
-        padding: 4rem 10vw ;
+        padding: 4rem 10vw;
         & > h2 {
             @include section_header();
         }
@@ -87,11 +101,8 @@
             margin: 0 0 2rem;
             font-family: var(--f-2);
         }
-
     }
-
 }
-
 
 @keyframes fadeInRight {
     0% {

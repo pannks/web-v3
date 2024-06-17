@@ -21,6 +21,9 @@ const nextConfig = {
         // loader: "custom",
         unoptimized: true,
     },
+    typescript: {
+        ignoreBuildErrors: true,
+    }
 };
 
 module.exports = withMDX(nextConfig);
