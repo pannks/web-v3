@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect } from 'react';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 type DarkModeContextValue = {
     isDarkMode: boolean;
@@ -16,37 +17,22 @@ const DarkModeContext = createContext<DarkModeContextValue | undefined>(
 );
 
 const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
-    const isLocalStorageAvailable =
-        typeof window !== "undefined" && typeof localStorage !== "undefined";
-
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        if (isLocalStorageAvailable) {
-            const storedValue = localStorage.getItem("isDarkMode");
-            return storedValue ? JSON.parse(storedValue) : false;
-        }
-        return false; // Fallback value if localStorage is not available
-    });
+    const [isDarkMode, setIsDarkMode] = useLocalStorage<boolean>(
+        'isDarkMode',
+        false
+    );
 
     const toggleDarkMode = () => {
-        setIsDarkMode((prevIsDarkMode: boolean) => {
-            const newIsDarkMode = !prevIsDarkMode;
-            if (isLocalStorageAvailable) {
-                localStorage.setItem(
-                    "isDarkMode",
-                    JSON.stringify(newIsDarkMode)
-                );
-            }
-            return newIsDarkMode;
-        });
+        setIsDarkMode((prevIsDarkMode: boolean) => !prevIsDarkMode);
     };
 
     useEffect(() => {
         if (isDarkMode) {
-            document.documentElement.classList.add("dark-mode");
-            document.documentElement.classList.remove("light-mode");
+            document.documentElement.classList.add('dark-mode');
+            document.documentElement.classList.remove('light-mode');
         } else {
-            document.documentElement.classList.remove("dark-mode");
-            document.documentElement.classList.add("light-mode");
+            document.documentElement.classList.remove('dark-mode');
+            document.documentElement.classList.add('light-mode');
         }
     }, [isDarkMode]);
 
@@ -60,7 +46,7 @@ const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
 function useDarkMode() {
     const context = useContext(DarkModeContext);
     if (context === undefined) {
-        throw new Error("use DarkModeContext outside provider");
+        throw new Error('useDarkMode must be used within a DarkModeProvider');
     }
     return context;
 }

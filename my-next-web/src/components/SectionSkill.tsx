@@ -1,7 +1,7 @@
-import React from "react";
-import SkillCard from "./SkillCard";
-import styles from "./SectionSkill.module.scss";
-import { Skill, skillData } from "@/data/skillData";
+import React from 'react';
+import SkillCard from './SkillCard';
+import styles from './SectionSkill.module.scss';
+import { Skill, skillData } from '@/data/skillData';
 
 const SectionSkill = () => {
     const renderSkill = (skill: Skill) => (
@@ -16,6 +16,7 @@ const SectionSkill = () => {
     );
     return (
         <>
+            <h2 className={styles.head}>Skill</h2>
             <h3 className={styles.head}>Frontend</h3>
             <p className={styles.desc}>
                 เป็นส่วนที่ชอบมาก รู้สึกสนุก

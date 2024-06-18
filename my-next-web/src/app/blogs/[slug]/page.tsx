@@ -8,6 +8,7 @@ import OtherPosts from '@/components/OtherPosts';
 import { HiChevronLeft } from 'react-icons/hi2';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import SocialCountPost from '@/components/SocialCountPost';
 
 type BlogPageProps = {
     params: {
@@ -37,7 +38,7 @@ const BlogPage: React.FC<BlogPageProps> = async ({ params }) => {
         options: options,
     });
 
-    // console.log(allPosts);
+    // console.log(post);
 
     return (
         <>
@@ -51,6 +52,7 @@ const BlogPage: React.FC<BlogPageProps> = async ({ params }) => {
                 <h2 className={styles.page__desc}>{post.desc}</h2>
                 <article>{content}</article>
             </div>
+            <SocialCountPost slug={params.slug} />
             <OtherPosts posts={allPosts ?? []} slug={params.slug} />
         </>
     );
@@ -69,6 +71,16 @@ export async function generateMetadata({
     return {
         title: `${post.title} | PannKs`,
         description: post.desc,
+        openGraph: {
+            title: `${post.title} | PannKs`,
+            description: post.desc,
+            url: `https://pannks.com/blogs/${post.slug}`,
+            images: [
+                {
+                    url: post.coverImage,
+                },
+            ],
+        },
     };
 }
 

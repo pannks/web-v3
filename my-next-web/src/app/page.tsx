@@ -1,13 +1,14 @@
-import SectionProjects from "@/components/SectionProjects";
-import styles from "./page.module.scss";
-import ProjectCard from "@/components/ProjectCard";
-import SectionSkill from "@/components/SectionSkill";
-import { Metadata } from "next";
-import Link from "next/link";
-import { HiOutlineChevronRight } from "react-icons/hi2";
-import NavSide from "@/components/NavSide";
-import Image from "next/image";
-import HomeImage from "./HomeImage";
+import SectionProjects from '@/components/SectionProjects';
+import styles from './page.module.scss';
+import ProjectCard from '@/components/ProjectCard';
+import SectionSkill from '@/components/SectionSkill';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { HiOutlineChevronRight } from 'react-icons/hi2';
+import NavSide from '@/components/NavSide';
+import Image from 'next/image';
+import HomeImage from './HomeImage';
+import Badge from '@/components/Badge';
 
 export default function Home() {
     return (
@@ -35,7 +36,6 @@ export default function Home() {
                 <SectionProjects />
             </div>
             <div className={styles.section__3}>
-                <h2>Skills</h2>
                 <SectionSkill />
             </div>
             <div className={styles.section__4}>

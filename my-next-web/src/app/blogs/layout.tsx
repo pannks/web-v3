@@ -1,7 +1,13 @@
+import { SocialCountProvider } from '@/contexts/SocialCountContext';
+
 export default function BlogLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return <>{children}</>;
+    return (
+        <>
+            <SocialCountProvider>{children}</SocialCountProvider>
+        </>
+    );
 }

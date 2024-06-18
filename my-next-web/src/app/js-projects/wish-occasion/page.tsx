@@ -1,5 +1,5 @@
 'use client';
-import CopyToClipboardButton from '@/app/hooks/useCopyToClipboard';
+import CopyToClipboardButton from '@/hooks/useCopyToClipboard';
 
 import React, { useState } from 'react';
 import styles from './page.module.scss';
