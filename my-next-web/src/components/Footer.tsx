@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
-import { SiGithub, SiYoutube, SiInstagram } from 'react-icons/si';
+import { SiGithub, SiYoutube, SiInstagram, SiFacebook } from 'react-icons/si';
 
 const Footer = () => {
     return (
@@ -10,14 +10,14 @@ const Footer = () => {
                 <Link href="https://github.com/pannks">
                     <SiGithub size={18} />
                 </Link>
+                <Link href="https://www.facebook.com/pannksofficial">
+                    <SiFacebook size={18} />
+                </Link>
                 <Link href="https://www.youtube.com/channel/UCFnF4VHD1qSyraDuE1LKIFQ">
                     <SiYoutube size={18} />
                 </Link>
-                <Link href="./">
-                    <SiInstagram size={18} />
-                </Link>
             </div>
-            <p>v.3.2.0 | Created By Next.JS 13.4 </p>
+            <p>v.3.2.1 | Created By Next.JS 13.4 </p>
             <p>Pann Kaansadich &copy; 2024 </p>
         </footer>
     );
