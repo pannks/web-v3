@@ -1,0 +1,116 @@
+.card {
+    padding: 1.6rem 2rem;
+    border-radius: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--f-1);
+    font-size: 1.4rem;
+    font-weight: 400;
+    gap: 0.8rem;
+    background-color: var(--c-grey-100);
+    &__img {
+        width: 6.4rem;
+        height: 6.4rem;
+        border-radius: 0.8rem;
+        background-color: var(--c-grey-200);
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    &__title {
+        font-weight: 500;
+    }
+    &__price {
+        font-weight: 400;
+        color: var(--c-grey-700);
+    }
+    &__qty {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+    }
+    &__btm_row {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        justify-content: space-between;
+    }
+}
+.btn__remove {
+    background-color: transparent;
+    border: 1px solid var(--c-grey-700);
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: var(--f-1);
+    font-weight: 600;
+    transition: all 200ms ease;
+    color: var(--c-grey-700);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    & > svg {
+        font-size: 1.6rem;
+    }
+    &:hover {
+        transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+        background-color: var(--c-cancel);
+        color: var(--c-white);
+        border: 1px solid var(--c-chip-1);
+    }
+}
+/*
+
+ &__item {
+        padding: 1.6rem 2rem;
+        border-radius: 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--f-1);
+        font-size: 1.4rem;
+        font-weight: 400;
+        gap: 1rem;
+        background-color: var(--c-grey-100);
+        &__img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 0.6rem;
+            background-color: var(--c-grey-200);
+            overflow: hidden;
+            margin-right: 1rem;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &__info {
+            & > h4 {
+                font-weight: 500;
+                margin-bottom: 0.6rem;
+            }
+        }
+        &__price {
+            font-weight: 600;
+        }
+        &__remove {
+            cursor: pointer;
+            font-size: 1.6rem;
+            transition: all 200ms ease;
+            &:hover {
+                transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+            }
+        }
+    }
+*/

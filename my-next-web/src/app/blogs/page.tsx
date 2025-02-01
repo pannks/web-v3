@@ -12,6 +12,7 @@ const BlogsPage = () => {
         "desc",
         "coverImage",
         "category",
+        "date"
     ]);
     return (
         <>
@@ -19,18 +20,20 @@ const BlogsPage = () => {
             <div className={styles.section__1}>
                 <h1 className={styles.heading}>My Blogs</h1>
                 <div className={styles.card__wrap}>
-                    {allPosts.map((post) => {
-                        const { title, desc, slug, coverImage, category } =
-                            post;
-                        const postItem: PostType = {
-                            title,
-                            desc,
-                            slug,
-                            coverImage,
-                            category,
-                        };
-                        return <PostCard key={post.slug} post={postItem} />;
-                    })}
+                    {allPosts
+                        .sort((a, b) => b?.date?.localeCompare(a?.date))
+                        .map((post) => {
+                            const { title, desc, slug, coverImage, category } =
+                                post;
+                            const postItem: PostType = {
+                                title,
+                                desc,
+                                slug,
+                                coverImage,
+                                category
+                            };
+                            return <PostCard key={post.slug} post={postItem} />;
+                        })}
                 </div>
             </div>
         </>

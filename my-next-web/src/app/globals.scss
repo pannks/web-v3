@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 :root {
     &,
     &.light-mode {
@@ -10,16 +12,19 @@
         --c-grey-700: #666666;
 
         --c-primary: #00ccff;
+        --c-primary-3: #187cff;
         --c-primary-2: #ff5ca0;
         --c-primary-light: #e8faff;
         --c-primary-light-2: #fbf1ff;
 
         --c-primary-sh: #46464638;
+        --c-overlay-white: #ffffffbd;
 
-        --c-secondary: #44c22b;
+        --c-secondary: #3ddf1d;
+        --c-secondary-2: #baeeaf;
         --c-secondary-light: #eaf5f8;
 
-        --c-selection: #ffe552;
+        --c-selection: #ffdbe5;
         --c-bg-todo: #f2fcff;
         --c-bg-progress: #fffdf2;
         --c-bg-done: #f4fff2;
@@ -47,7 +52,7 @@
         --c-chip-6: #77c1fd;
         --c-chip-7: #68cfff;
         --c-chip-8: #64e1f1;
-        --c-chip-9: #3bc5b7;
+        --c-chip-9: #10c8b5;
         --c-chip-10: #84dd81;
         --c-chip-11: #91e757;
         --c-chip-12: #b9e94b;
@@ -59,6 +64,7 @@
         --c-chip-18: #bdbdbd;
 
         --c-chip-2-4: #6d2ae1;
+        --c-chip-2-14: #f7b900;
 
         --c-chip-100-1: #ffebee;
         --c-chip-100-2: #fce4ec;
@@ -78,6 +84,8 @@
         --c-chip-100-16: #fbe9e7;
         --c-chip-100-17: #efebe9;
         --c-chip-100-18: #fafafa;
+
+        --dark-by-filter: none;
     }
     &.dark-mode {
         --c-white: #19191b;
@@ -88,24 +96,27 @@
         --c-grey: #848484;
         --c-grey-700: #c5c5c5;
 
-        --c-primary: #78efff;
+        --c-primary: #00d5ff;
+        --c-primary-3: #4d9aff;
         --c-primary-2: #ff70bf;
 
         --c-primary-light: #21262b;
-        --c-primary-light-2: #2c262e;
+        --c-primary-light-2: #262e2d;
 
         --c-primary-sh: #00000075;
+        --c-overlay-white: #0000008b;
 
-        --c-secondary: #8ff17c;
-        --c-secondary-light: #251e21;
+        --c-secondary: #6cff4f;
+        --c-secondary-2: #1c4913;
+        --c-secondary-light: #1e2524;
 
-        --c-selection: #e09e2d;
+        --c-selection: #002e62;
 
         --c-bg-todo: #252c30;
         --c-bg-progress: #302c25;
         --c-bg-done: #253025;
         --c-bg-cancel: #302525;
-        --c-cancel: #ff8080;
+        --c-cancel: #ec5252;
 
         --code-base: #282c34;
         --code-mono-1: #abb2bf;
@@ -127,8 +138,8 @@
         --c-chip-5: #3b468a;
         --c-chip-6: #3662a0;
         --c-chip-7: #3380a9;
-        --c-chip-8: #359eaa;
-        --c-chip-9: #34978c;
+        --c-chip-8: #2ba8b6;
+        --c-chip-9: #1cbfac;
         --c-chip-10: #4daf62;
         --c-chip-11: #58ad43;
         --c-chip-12: #8bab34;
@@ -140,6 +151,7 @@
         --c-chip-18: #616161;
 
         --c-chip-2-4: #bfa3ff;
+        --c-chip-2-14: #e4ac44;
 
         --c-chip-100-1: #3a0b12;
         --c-chip-100-2: #3a0819;
@@ -159,6 +171,9 @@
         --c-chip-100-16: #60170f;
         --c-chip-100-17: #4b2411;
         --c-chip-100-18: #470f0f;
+
+        --dark-by-filter: hue-rotate(180deg) invert(1) contrast(0.8)
+            brightness(1.2) saturate(1.1);
     }
 
     --c-gb-white: #fff;
@@ -201,7 +216,7 @@ html {
         font-size: 56.25%;
     } //9px
     @media (min-width: 112.5em) {
-        font-size: 75%;
+        font-size: 65%;
     } //12px
 }
 

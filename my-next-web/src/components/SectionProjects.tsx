@@ -35,6 +35,27 @@ const SectionProjects = () => {
                     tagArray={project.pj04.tagArray}
                     href={project.pj04.href}
                 />
+                <ProjectCard
+                    title={project.pj05.title}
+                    desc={project.pj05.desc}
+                    img={project.pj05.src}
+                    tagArray={project.pj05.tagArray}
+                    href={project.pj05.href}
+                />
+                <ProjectCard
+                    title={project.pj06.title}
+                    desc={project.pj06.desc}
+                    img={project.pj06.src}
+                    tagArray={project.pj06.tagArray}
+                    href={project.pj06.href}
+                />
+                <ProjectCard
+                    title={project.pj07.title}
+                    desc={project.pj07.desc}
+                    img={project.pj07.src}
+                    tagArray={project.pj07.tagArray}
+                    href={project.pj07.href}
+                />
             </div>
         </>
     );

@@ -15,11 +15,11 @@ const SkillCard: React.FC<SkillCardProps> = ({
     desc,
     time,
     icon,
-    colorOnHov,
+    colorOnHov
 }) => {
-    const [colorHov, setColorHov] = useState("var(--c--black)");
+    const [colorHov, setColorHov] = useState("var(--c-grey-700)");
     const iconStyle: React.CSSProperties = {
-        color: colorHov,
+        color: colorHov
     };
     return (
         <div

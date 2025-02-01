@@ -1,21 +1,17 @@
 "use client";
 
+import useLocalStorage from "@/hooks/useLocalStorage";
+import { User } from "@/utils/dataType";
+import { unsubscribe } from "@/utils/firebase";
 import { createContext, useContext, useEffect, useState } from "react";
-
-export type User = {
-    username: string;
-    role: string;
-    id?: string;
-    name?: string;
-    img?: string;
-    status_msg?: string;
-};
+import { toast } from "react-hot-toast";
 
 type UserContextValue = {
-    user: User | undefined;
+    user: User | null;
     loading: boolean;
     logIn: (user: User) => void;
     logOut: () => void;
+    isLogIn: boolean;
 };
 
 type UserProviderProps = {
@@ -25,12 +21,14 @@ type UserProviderProps = {
 const UserContext = createContext<UserContextValue | undefined>(undefined);
 
 const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
-    const [user, setUser] = useState<User | undefined>(undefined);
+    const [user, setUser] = useLocalStorage<User | null>("user", null);
     const [loading, setLoading] = useState(true);
+    const [isLogIn, setIsLogIn] = useState(false);
 
     const logOut = () => {
-        setUser(undefined);
-        localStorage.removeItem("user");
+        setUser(null);
+        setIsLogIn(false);
+        toast(`Bye! You're signed out now!`);
     };
 
     const logIn = (user: User | undefined) => {
@@ -38,19 +36,20 @@ const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
             return;
         }
         setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
+        setIsLogIn(true);
+        toast.success(`Welcome ${user.displayName}!`);
     };
 
     useEffect(() => {
-        const savedUser = localStorage.getItem("user");
-        if (savedUser) {
-            setUser(JSON.parse(savedUser));
+        if (user) {
+            // toast.success(`You're signed in as ${user.displayName}`);
         }
-        setLoading(false); // Set loading to false after user data is loaded
+        setLoading(false);
+        return unsubscribe();
     }, []);
 
     return (
-        <UserContext.Provider value={{ user, loading, logIn, logOut }}>
+        <UserContext.Provider value={{ user, loading, logIn, logOut, isLogIn }}>
             {children}
         </UserContext.Provider>
     );

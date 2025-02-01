@@ -20,17 +20,26 @@
         font-size: 1.6rem;
         font-weight: 500;
         margin-bottom: 0.6rem;
+        transition: all 200ms ease;
     }
     & p {
         font-family: var(--f-2);
         font-size: 1.2rem;
-        margin-bottom: 0.8rem;
+
+        &.date {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: var(--c-grey);
+        }
     }
 
     &:hover {
-        outline: 0.1rem solid var(--c-primary);
+        outline: 0.1rem solid var(--c-chip-2-14);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         z-index: 99;
+        & h3 {
+            color: var(--c-chip-2-14);
+        }
     }
 }
 .section__other {

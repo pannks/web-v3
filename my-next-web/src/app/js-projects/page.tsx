@@ -2,10 +2,9 @@ import React from 'react';
 import styles from './page.module.scss';
 import JsProjCard from './JsProjCard';
 import {
-    HiAcademicCap,
-    HiChevronLeft,
     HiOutlineCake,
     HiOutlineCurrencyDollar,
+    HiOutlineCurrencyPound,
     HiOutlineIdentification,
     HiOutlinePresentationChartLine,
     HiOutlineStar,
@@ -60,6 +59,12 @@ const JsProjectsPage = () => {
                             'คำอวยพรที่เหมาะกับแต่ละเทศกาลเตรียมไว้ให้คุณได้คัดลอกไปใช้'
                         }
                         href={'/js-projects/wish-occasion/'}
+                    />
+                    <JsProjCard
+                        icon={<HiOutlineCurrencyPound />}
+                        name={'Thai Lottery Result'}
+                        desc={'แสดงผลการออกรางวัลสลากกินแบ่งรัฐบาลงวดล่าสุด'}
+                        href={'/js-projects/lotto/'}
                     />
                 </div>
             </div>

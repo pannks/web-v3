@@ -1,14 +1,15 @@
-import SectionProjects from '@/components/SectionProjects';
-import styles from './page.module.scss';
-import ProjectCard from '@/components/ProjectCard';
-import SectionSkill from '@/components/SectionSkill';
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { HiOutlineChevronRight } from 'react-icons/hi2';
-import NavSide from '@/components/NavSide';
-import Image from 'next/image';
-import HomeImage from './HomeImage';
-import Badge from '@/components/Badge';
+import SectionProjects from "@/components/SectionProjects";
+import styles from "./page.module.scss";
+import SectionSkill from "@/components/SectionSkill";
+import Link from "next/link";
+import {
+    HiCodeBracketSquare,
+    HiComputerDesktop,
+    HiFire,
+    HiOutlineChevronRight
+} from "react-icons/hi2";
+import NavSide from "@/components/NavSide";
+import HomeImage from "./HomeImage";
 
 export default function Home() {
     return (
@@ -16,14 +17,13 @@ export default function Home() {
             <NavSide />
             <div className={styles.section__1}>
                 <h1>
-                    Hello, My Name is <span>Pann Kaansadich</span>
+                    Hi, My name is <span>Pann Kaansadich</span>
                 </h1>
                 <p>
-                    <HiOutlineChevronRight /> study at JC Thammasat
-                    (Advertising)
+                    <HiOutlineChevronRight /> Graduated from Advertising Field
                 </p>
                 <p>
-                    <HiOutlineChevronRight /> Passionate to be Fullstack
+                    <HiOutlineChevronRight /> Working as a Freelance Fullstack
                     Developer
                 </p>
                 <div className={styles.section__1__img}>
@@ -31,20 +31,35 @@ export default function Home() {
                 </div>
             </div>
             <div className={styles.section__2}>
-                <h2>Projects</h2>
+                <span className={styles.section__2__icon}>
+                    <HiCodeBracketSquare />
+                </span>
+                <h2>PROJECTS</h2>
+
                 <p>My Coding Project</p>
                 <SectionProjects />
             </div>
             <div className={styles.section__3}>
+                <span className={styles.section__2__icon}>
+                    <HiFire />
+                </span>
+                <h2 className={styles.head}>USED TOOLS</h2>
                 <SectionSkill />
             </div>
             <div className={styles.section__4}>
-                <h2>Contact</h2>
-                <p>ติดต่องานที่ pann.rat@dome.tu.ac.th</p>
-                <p>
-                    รับงานเขียนเว็บแอปพลิเคชั่นสำหรับใช้งานภายในองค์กร และ
-                    เว็บไซต์แนว Landing Page / SEO
-                </p>
+                <span className={styles.section__2__icon}>
+                    <HiComputerDesktop />
+                </span>
+                <h2>CONTACT ME</h2>
+
+                <div className={styles.section__4__links}>
+                    <Link
+                        className={styles.section__4__link}
+                        href="https://forms.gle/jnq4WnSeYvzeV3sU6"
+                    >
+                        ติดต่อสอบถาม ติดต่องาน
+                    </Link>
+                </div>
             </div>
         </>
     );

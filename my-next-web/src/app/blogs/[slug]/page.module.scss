@@ -5,11 +5,32 @@
     font-size: 1.2rem;
     font-family: var(--f-2);
     & > a {
-        color: var(--c-grey-500);
-        padding: 0.2rem 0;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-family: var(--f-1);
+        color: var(--c-black);
+        background-color: var(--c-white);
+        transition: all 200ms ease;
+        cursor: pointer;
+
+        &.active {
+            background-color: var(--c-chip-100-14);
+            border: 2px solid var(--c-chip-14);
+        }
+
         &:hover {
-            background-color: var(--c-primary);
-            color: var(--c-white);
+            background-color: var(--c-grey);
+            box-shadow: rgba(75, 75, 75, 0.123) 0px 1px 4px;
+            & .popup {
+                visibility: visible;
+            }
         }
     }
 }
@@ -96,6 +117,14 @@
             font-size: 1.5rem;
             margin: 0.6rem 4.4rem;
         }
+        & pre > code {
+            padding: 1.2rem 2rem;
+            border-radius: 0.8rem;
+            background-color: var(--c-grey-100);
+            border: 1px solid var(--c-grey-200);
+            overflow-x: auto;
+            display: block;
+        }
 
         // & pre {
         //     padding: 1.2rem 2rem;
@@ -106,7 +135,7 @@
         & p {
             margin: 1.2rem 0;
             line-height: 1.6;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             & > code {
                 color: var(--c-grey-700);
             }

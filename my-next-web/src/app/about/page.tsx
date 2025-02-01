@@ -4,16 +4,15 @@ import SectionBackLink from "@/components/SectionBackLink";
 
 export const metadata: Metadata = {
     title: "Pann's Website | About Me",
-    description: "PannKs Latest Official Website 2023",
+    description: "PannKs Latest Official Website 2023"
 };
 
 const AboutPage = () => {
     return (
         <>
-            <SectionBackLink />
-            <div className={styles.section__1}>
-                <h1 className={styles.heading}>About Me</h1>
-                <p>Just someone who is lonely in the huge world</p>
+            <div className={styles.page}>
+                <h1 className={styles.heading}>Coming Soon</h1>
+                <p>รอก่อน </p>
             </div>
         </>
     );

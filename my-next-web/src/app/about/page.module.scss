@@ -1,12 +1,16 @@
-.section {
-    &__1 {
-        padding: 4rem 10vw ;
-        font-family: var(--f-2);
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: var(--f-2);
+    & > h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
     }
-}
-
-.heading {
-    font-family: var(--f-1);
-    font-size: 2.2rem;
-    margin: 0 0 2rem;
+    & > p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
 }

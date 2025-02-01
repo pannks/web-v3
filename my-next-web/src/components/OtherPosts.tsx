@@ -28,6 +28,9 @@ const OtherPosts: React.FC<OtherPostsProps> = ({ posts, slug }) => {
                                     <div className={styles.card}>
                                         <h3>{post.title}</h3>
                                         <p>{post.desc}</p>
+                                        <p className={styles.date}>
+                                            {new Date(post.date).toDateString()}
+                                        </p>
                                     </div>
                                 </Link>
                             );

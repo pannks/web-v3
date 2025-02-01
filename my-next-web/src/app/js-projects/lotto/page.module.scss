@@ -1,0 +1,199 @@
+.page {
+    padding: 2rem 3.2rem 4rem;
+    font-size: 1.4rem;
+    font-family: var(--f-4);
+    background-color: var(--c-white);
+    display: flex;
+    flex-direction: column;
+    & h1 {
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 4rem;
+        text-align: center;
+    }
+    & input {
+        background-color: var(--c-white);
+        padding: 0.6rem 2rem;
+        text-align: center;
+        letter-spacing: 1.2rem;
+        font-size: 2.4rem;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+        font-weight: 600;
+        border: 3px solid transparent;
+        font-family: var(--f-4);
+
+        &:focus:invalid {
+            outline: 3px solid var(--c-white);
+        }
+    }
+    & .input_check {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin-bottom: 3rem;
+        height: 100%;
+
+        & > button {
+            color: var(--c-white);
+            background-image: linear-gradient(30deg, #0094e9 0%, #80d0c7 100%);
+            border: none;
+            font-weight: 600;
+            padding: 0.6rem 2rem;
+            font-size: 1.6rem;
+            cursor: pointer;
+            &:hover {
+                background-color: var(--c-grey);
+            }
+        }
+    }
+
+    & .check_result {
+        width: max-content;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 0.8rem 6rem;
+        border-radius: 2.2rem;
+        &_result {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        &_price {
+            font-size: 1.6rem;
+        }
+    }
+    & .layout {
+        width: 100%;
+        display: grid;
+        padding: 2rem 8rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+        @media (max-width: 48rem) {
+            display: block;
+            padding: 2rem;
+            & .row {
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+    & .row {
+        display: inline-flex;
+        flex-direction: column;
+        padding: 0;
+        box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        background-color: var(--c-white);
+        & h2 {
+            font-size: 1.6rem;
+            font-family: var(--f-4);
+            padding: 1rem 2.4rem;
+            margin-bottom: 2rem;
+            color: var(--c-black);
+            background-color: var(--c-grey-200);
+        }
+
+        & p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: var(--f-4);
+            letter-spacing: 0.1rem;
+        }
+        & span.wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.4rem;
+            padding: 1rem 2.4rem 2.4rem;
+        }
+
+        &.first {
+            font-size: 3rem;
+
+            & p {
+                color: var(--c-black);
+                font-size: 3.2rem;
+            }
+        }
+        &.near_one {
+            display: flex;
+            grid-column: 2/4;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 3.2rem;
+            }
+        }
+        &.last_two {
+            display: flex;
+            grid-column: 4/5;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 2.8rem;
+            }
+        }
+        &.last_three {
+            display: flex;
+            grid-column: 4/-1;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 2.8rem;
+            }
+        }
+        &.first_three {
+            display: flex;
+            grid-column: 3/4;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 2.8rem;
+            }
+        }
+        &.second {
+            display: flex;
+            grid-column: 1/2;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 2.4rem;
+            }
+        }
+        &.third {
+            display: flex;
+            grid-column: 2/3;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 2rem;
+            }
+        }
+        &.fourth {
+            display: flex;
+            grid-column: 1/3;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 1.8rem;
+            }
+        }
+        &.fifth {
+            display: flex;
+            grid-column: 3/5;
+
+            & p {
+                display: inline-flex;
+                color: var(--c-black);
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

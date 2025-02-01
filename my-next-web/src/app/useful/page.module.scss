@@ -1,0 +1,117 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--f-2);
+    background-color: var(--c-grey-100);
+
+    & > h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    & > p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 2rem;
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    font-family: var(--f-3);
+    & > h1 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        font-family: var(--f-3);
+        font-weight: 500;
+    }
+    & > h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-family: var(--f-1);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        padding: 0.6rem;
+        border-radius: 0.9rem;
+        color: var(--c-chip-9);
+        & > svg {
+            font-size: 1.6rem;
+            background-color: var(--c-chip-9);
+            padding: 0.4rem;
+            border-radius: 0.9rem;
+            color: var(--c-gb-white);
+        }
+    }
+    & > p {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+    }
+    & > * {
+        margin-bottom: 1rem;
+    }
+    &__heading {
+        font-size: 2.8rem;
+        margin-bottom: 6rem;
+        font-family: var(--f-1);
+        font-weight: 400;
+        padding: 1rem 0rem;
+    }
+}
+
+.card {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+        gap: 1rem;
+    }
+    display: flex;
+    flex-direction: column;
+    background-color: var(--c-white);
+    padding: 1.6rem 2.8rem;
+    border-radius: 0.8rem;
+    font-family: var(--f-1);
+    transition: all 0.1s ease-in;
+    outline: 0px solid transparent;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    & svg {
+        font-size: 8rem;
+        color: var(--c-grey-100);
+        position: absolute;
+        right: -2rem;
+        bottom: -2rem;
+        transform: rotate(30deg);
+    }
+    & p {
+        position: relative;
+        line-height: 1.7;
+        font-size: 1.2rem;
+        line-clamp: 2;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    & h2 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin: 0.6rem 0;
+    }
+    &:hover {
+        transform: translateY(-0.2rem);
+        outline: 1px solid var(--c-chip-14);
+        box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.06);
+        & h2 {
+            color: var(--c-chip-14);
+        }
+    }
+}

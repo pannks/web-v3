@@ -35,6 +35,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
         }
     });
 
+    // console.log("data:", data);
     return items;
 }
 
@@ -42,7 +43,11 @@ export function getAllPosts(fields: string[] = []) {
     const slugs = getPostSlugs(); //[ 'welcome.md' ]
     const posts = slugs.map((slug) => getPostBySlug(slug, fields));
     // sort posts by date in descending order
-    // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    const sortedPost = posts.sort((post1, post2) =>
+        post1.date > post2.date ? -1 : 1
+    );
 
-    return posts;
+    // console.log(sortedPost);
+
+    return sortedPost;
 }

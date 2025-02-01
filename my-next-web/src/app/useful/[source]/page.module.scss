@@ -1,0 +1,45 @@
+.page {
+    padding: 0rem 0;
+}
+.info {
+    &__header {
+        & > h1 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            font-family: var(--f-3);
+            border-bottom: 2px solid var(--c-chip-15);
+            padding-bottom: 0.8rem;
+            color: var(--c-chip-15);
+        }
+    }
+    &__wrapper {
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 6rem 3.2rem 2rem;
+    }
+    &__detail {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.4rem;
+        font-family: var(--f-3);
+        color: var(--c-grey-500);
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+}
+
+.content {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 0rem 3.2rem;
+        @media (max-width: 768px) {
+            padding: 0rem 0;
+        }
+    }
+    background-color: var(--c-white);
+    padding: 1rem 3.2rem 8rem;
+}

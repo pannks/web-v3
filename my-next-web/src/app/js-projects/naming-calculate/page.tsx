@@ -1,11 +1,16 @@
-'use client';
-import SectionBackLink from '@/components/SectionBackLink';
-import React, { useEffect, useState } from 'react';
-import styles from './page.module.scss';
-import { calcHoro, textToNum, TransToHoroDate } from './name_data';
-import CustomDatePicker from '@/components/CustomDatePicker';
-import { formatLocalDate } from '@/utils/transform';
-import { spawn } from 'child_process';
+"use client";
+import SectionBackLink from "@/components/SectionBackLink";
+import React, { useEffect, useState } from "react";
+import styles from "./page.module.scss";
+import {
+    calcHoro,
+    numberMeaning,
+    textToNum,
+    TransToHoroDate
+} from "./name_data";
+import CustomDatePicker from "@/components/CustomDatePicker";
+import { formatLocalDate } from "@/utils/transform";
+import { HiOutlineExclamationTriangle } from "react-icons/hi2";
 
 const NamingCalculatorPage = () => {
     const [birthDate, setBirthDate] = useState<Date | null>(null);
@@ -17,9 +22,9 @@ const NamingCalculatorPage = () => {
     const [calcArrFn, setCalcArrFn] = useState<string[]>([]);
     const [calcArrLn, setCalcArrLn] = useState<string[]>([]);
 
-    const [fieldN, setFieldN] = useState<string>('');
-    const [fieldFn, setFieldFn] = useState<string>('');
-    const [fieldLn, setFieldLn] = useState<string>('');
+    const [fieldN, setFieldN] = useState<string>("");
+    const [fieldFn, setFieldFn] = useState<string>("");
+    const [fieldLn, setFieldLn] = useState<string>("");
 
     const calcHoroFunc = (
         field: string,
@@ -55,7 +60,7 @@ const NamingCalculatorPage = () => {
                 <div className={styles.form}>
                     <h2>คำนวณชื่อ (Naming Calculator)</h2>
                     <div className={styles.row__date}>
-                        <label>วันที่ / เดือน / ปี</label>
+                        <label>วันที่ / เดือน / ปี (ค.ศ)</label>
                         <div className={styles.div_1}>
                             <CustomDatePicker
                                 onDateChange={(date) => setBirthDate(date)}
@@ -68,7 +73,7 @@ const NamingCalculatorPage = () => {
                             <span>
                                 {birthDate &&
                                     TransToHoroDate(birthDate).day +
-                                        '  ' +
+                                        "  " +
                                         TransToHoroDate(birthDate).date}
                             </span>
                         </div>
@@ -85,7 +90,7 @@ const NamingCalculatorPage = () => {
                         <p>ถอดทักษา: </p>
                         <p className={styles.val_sum}>
                             {calcArrN
-                                .filter((v) => v !== ' ')
+                                .filter((v) => v !== " ")
                                 .map((v, i) => (
                                     <span className={styles.val} key={i}>
                                         {v}
@@ -105,7 +110,7 @@ const NamingCalculatorPage = () => {
                         <p>ถอดทักษา: </p>
                         <p className={styles.val_sum}>
                             {calcArrFn
-                                .filter((v) => v !== ' ')
+                                .filter((v) => v !== " ")
                                 .map((v, i) => (
                                     <span className={styles.val} key={i}>
                                         {v}
@@ -125,7 +130,7 @@ const NamingCalculatorPage = () => {
                         <p>ถอดทักษา: </p>
                         <p className={styles.val_sum}>
                             {calcArrLn
-                                .filter((v) => v !== ' ')
+                                .filter((v) => v !== " ")
                                 .map((v, i) => (
                                     <span className={styles.val} key={i}>
                                         {v}
@@ -139,6 +144,38 @@ const NamingCalculatorPage = () => {
                         <span>{sumN + sumFn + sumLn}</span>
                         <button>+ Add</button>
                     </div>
+                </div>
+                <div className={styles.result}>
+                    <h2>ผลลัพธ์</h2>
+                    <span className={styles.result__warn}>
+                        <HiOutlineExclamationTriangle />{" "}
+                        ความหมายอาจยังไม่ถูกต้อง โปรดตรวจสอบอีกครั้ง
+                    </span>
+                    {sumN != 0 && (
+                        <div className={styles.result__content}>
+                            <p>เลข {sumN}</p>
+                            <p>ความหมาย: </p>
+                            <p>
+                                {
+                                    numberMeaning.find((v) => v.number === sumN)
+                                        ?.meaning
+                                }
+                            </p>
+                        </div>
+                    )}
+                    {sumN + sumFn + sumLn != sumN && (
+                        <div className={styles.result__content}>
+                            <p>เลข {sumN + sumFn + sumLn}</p>
+                            <p>ความหมาย: </p>
+                            <p>
+                                {
+                                    numberMeaning.find(
+                                        (v) => v.number === sumN + sumFn + sumLn
+                                    )?.meaning
+                                }
+                            </p>
+                        </div>
+                    )}
                 </div>
             </div>
         </>

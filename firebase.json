@@ -3,15 +3,18 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "hosting": {
-    "public": "my-next-web/build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": []
-  },
+  "hosting": [
+    {
+      "site": "pann-kaansadich",
+      "public": "my-next-web/build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": []
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   }

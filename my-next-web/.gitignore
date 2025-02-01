@@ -26,6 +26,13 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env*.production
+/src/unused/
+/src/app/store
+/src/app/TU
+
+/my-astro-web
+
 
 # vercel
 .vercel
@@ -33,3 +40,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+testdata.ts

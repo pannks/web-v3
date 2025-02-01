@@ -1,0 +1,55 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.4rem 0.4rem;
+    border: 1px solid var(--c-grey-200);
+    border-radius: 0.6rem;
+    background-color: var(--c-white);
+}
+.code {
+    &__header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--f-1);
+        font-weight: 500;
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+        padding: 0.6rem 0.2rem;
+
+        &__txt {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--c-grey-500);
+            padding: 0 0.6rem;
+            font-family: var(--f-2);
+        }
+        &__file {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--c-grey-500);
+            background-color: var(--c-white);
+            padding: 0.8rem 1.4rem;
+            font-family: var(--f-1);
+            border-radius: 0.6rem;
+            border: none;
+            height: 100%;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            margin-right: 0.3rem;
+
+            &:hover {
+                color: var(--c-black);
+                background-color: var(--c-grey-100);
+            }
+
+            &.active {
+                background-color: var(--c-chip-15);
+                font-weight: 400;
+            }
+        }
+    }
+}

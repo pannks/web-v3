@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './Footer.module.scss';
-import Link from 'next/link';
-import { SiGithub, SiYoutube, SiInstagram, SiFacebook } from 'react-icons/si';
+import React from "react";
+import styles from "./Footer.module.scss";
+import Link from "next/link";
+import { SiGithub, SiYoutube, SiInstagram, SiFacebook } from "react-icons/si";
 
 const Footer = () => {
     return (
@@ -17,8 +17,8 @@ const Footer = () => {
                     <SiYoutube size={18} />
                 </Link>
             </div>
-            <p>v.3.2.1 | Created By Next.JS 13.4 </p>
-            <p>Pann Kaansadich &copy; 2024 </p>
+            <p>v.3.3.1 | Created By Next.JS 15.1 </p>
+            <p>Pann Kaansadich &copy; 2025 </p>
         </footer>
     );
 };

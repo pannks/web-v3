@@ -1,13 +1,13 @@
 .quicknav {
     rotate: 90deg;
     transform-origin: 0 0;
-    transform: translate(8rem, -3rem);
+    transform: translate(8rem, -4.2em);
     position: fixed;
-    background-color: var(--c-white);
     top: 0;
     font-family: var(--f-2);
     display: inline-flex;
     flex-direction: row;
+    gap: 1rem;
     transition: all 200ms ease;
     animation: fade-slide 670ms ease 0ms;
     opacity: 0.8;
@@ -16,16 +16,24 @@
         opacity: 1;
     }
     & > a {
-        padding: 1rem 2.8rem;
+        padding: 1.4rem 2rem;
+        border-radius: 0.8rem;
         transition: all 300ms ease;
+        border: 1px solid transparent;
         &:hover {
-            background-image: linear-gradient(
-                43deg,
-                #4158d0 0%,
-                #c850c0 46%,
-                #ffcc70 100%
-            );
-            transform: translateY(-0.8rem);
+            backdrop-filter: blur(5px);
+            transform: translateY(-1rem);
+            & svg {
+                color: #00ff84;
+                transform: scale(1.3) rotate(-90deg);
+                filter: drop-shadow(0 0 0.8rem #09ff00);
+            }
+        }
+        & > svg {
+            font-size: 2rem;
+            color: var(--c-grey-900);
+            transform: rotate(-90deg);
+            transition: all 300ms ease;
         }
     }
 }
@@ -37,6 +45,6 @@
     }
     100% {
         opacity: 0.8;
-        transform: translate(8rem, -3rem);
+        transform: translate(8rem, -4.2rem);
     }
 }

@@ -1,21 +1,23 @@
 .container {
     background-color: var(--c-grey-100);
-    padding: 1rem;
     display: flex;
     gap: 1rem;
     & > * > h2 {
         margin-bottom: 3rem;
         font-size: 1.8rem;
         font-weight: 600;
+        background-color: var(--c-chip-8);
+        display: inline-block;
+        padding: 0.4rem 2rem;
+        border-radius: 2rem;
     }
-    @media (max-width: 40rem) {
+    @media (max-width: 48rem) {
         display: block;
         padding: 2rem 0;
     }
 }
 .form {
     max-width: 60rem;
-    background-color: var(--c-white);
     padding: 4rem;
     font-size: 1.6rem;
     font-family: var(--f-3);
@@ -55,14 +57,12 @@
 .row {
     display: grid;
     grid-template-columns: 10rem minmax(20rem, 30rem) 2rem 5rem;
-    padding: 2rem;
+    padding: 2rem 4rem;
     gap: 2rem;
     align-items: center;
     background-color: var(--c-white);
-    border-radius: 0.6rem;
     margin-bottom: 1rem;
-    border: 1px solid var(--c-grey-100);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-left: 4px solid var(--c-chip-8);
     @media (max-width: 30rem) {
         grid-template-columns: 10rem 18rem 2rem 0;
         button {
@@ -70,7 +70,6 @@
         }
     }
     &:last-child {
-        padding: 0 2rem;
         margin-top: 2rem;
         & > span,
         p {
@@ -82,12 +81,11 @@
 .row__date {
     display: flex;
     flex-direction: column;
-    padding: 1rem 3rem;
+    padding: 3rem 3rem;
     margin-bottom: 1rem;
     background-color: var(--c-white);
-    border-radius: 0.6rem;
     border: 1px solid var(--c-grey-100);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-left: 4px solid var(--c-chip-8);
 
     & label {
         display: inline-flex;
@@ -136,4 +134,39 @@
     font-weight: 600;
 
     background-color: var(--c-primary-light);
+}
+
+.result {
+    padding: 4rem;
+    font-size: 1.6rem;
+    font-family: var(--f-3);
+    gap: 1rem;
+    & h2 {
+        display: inline-block;
+    }
+    &__warn {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: var(--c-chip-100-14);
+        font-weight: 600;
+        margin-bottom: 3rem;
+        padding: 0.4rem 2rem;
+        border-radius: 0.8rem;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 4rem;
+        border-left: 3px solid var(--c-chip-1);
+        background-color: var(--c-white);
+        padding: 2rem 2rem;
+
+        & p:nth-child(1) {
+            color: var(--c-chip-1);
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+    }
 }

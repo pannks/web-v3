@@ -1,18 +1,23 @@
 .skill__row {
     display: grid;
-    grid-template-columns: repeat(auto-fill ,minmax(8rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     font-family: var(--f-1);
-
+    gap: 2rem;
+    font-size: 1.2rem;
 }
 
 .head {
     font-family: var(--f-1);
-    font-size: 1.8rem;
-    margin: 2rem 0;
-    color: var(--c-primary);
+    width: max-content;
+    font-size: 2rem;
+    margin: 4rem 0;
+    color: var(--c-black);
+    padding: 0.4rem 1.6rem;
+    background-image: linear-gradient(80deg, #3ffe555f 0%, #28ffd46a 100%);
 }
 
 .desc {
-    font-family: var(--f-3);
-    font-size: 1.2rem;
+    font-family: var(--f-4);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
 }
